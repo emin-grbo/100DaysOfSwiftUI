@@ -114,3 +114,57 @@
 * Deinitializers
 * Mutability
 * Classes summary
+
+#
+ - [x] <b>Day 11</b>
+* Protocols
+* Protocol inheritance
+* Extensions
+* Protocol extensions
+* Protocol-oriented programming
+* Protocols and extensions summary
+ 
+ #
+ - [x] <b>Day 12</b>
+* Handling missing data
+* Unwrapping optionals
+* Unwrapping with guard
+* Force unwrapping
+* Implicitly unwrapped optionals
+* Nil coalescing
+* Optional chaining
+* Optional try
+* Failable initializers
+* Typecasting
+* Optionals summary
+
+ #
+ - [x] <b>Day 13</b>
+* Variables and constants
+* Types of Data
+* Operators
+* String interpolation
+* Arrays
+* Dictionaries
+* Conditional statements
+* Loops
+* Switch case
+
+REVIEW DAY
+ 
+ #
+ - [x] <b>Day 14</b>
+* Functions
+* Optionals
+* Optional chaining
+* Enumerations
+* Structs
+* Classes
+
+ #
+ - [x] <b>Day 15</b>
+* Properties
+* Static properties and methods
+* Access control
+* Polymorphism and typecasting
+* Closures
