@@ -1,5 +1,5 @@
 ![Header](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
-![Header](https://img.shields.io/badge/completion-15/100-brightgreen.svg)
+![Header](https://img.shields.io/badge/completion-17/100-brightgreen.svg)
 
 # 100DaysOfSwiftUI
 100 Days Of SwiftUI Challenge by Paul Hudson -> https://www.hackingwithswift.com/100/swiftui
@@ -180,7 +180,7 @@ REVIEW DAY
 * Creating views in a loop
 
  #
- - [x] <b>Day 16</b>
+ - [x] <b>Day 17</b>
 * Reading text from the user with TextField
 * Creating pickers in a form
 * Adding a segmented control for tip percentages
