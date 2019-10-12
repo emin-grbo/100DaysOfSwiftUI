@@ -10,54 +10,52 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var lengthInputs = ["meters", "kilometers", "feet", "yard", "miles"]
-    @State var tempInputs = ["Celsius", "Fahrenheit", "Kelvin"]
-    @State var timeInputs = ["seconds", "minutes", "hours", "days"]
-    @State var volumeInputs = ["milliliters", "liters", "cups", "pints", "gallons"]
+    @State var units: [[UnitType]] = [
+        [.meters, .kilometers, .feet, .yards, .miles],
+        [.Celsius, .Fahrenheit, .Kelvin, .Kelvin, .Kelvin],
+        [.seconds, .minutes, .hours, .miliseconds, .microseconds],
+        [.milliliters, .liters, .cups, .pints, .gallons]
+    ]
     
-    @State var inputUnitTypes = ["length", "temperature", "time", "volume"]
+    @State var inputUnitTypes: [UnitType] = [.length, .temperature, .time, .volume]
     
-    @State var selectedInput = ""
-//    @State var selectedOutput = ""
+    @State var input = ""
+
+    @State var unit = 0
+    @State var inputUnit = 0
+    @State var outputUnit = 0
     
-    @State var unit = 2
-    @State var inputUnit = 2
-    @State var outputUnit = 2
-    @State var fromText = "0"
-    
+    var selected: [UnitType] {
+        return units[unit]
+    }
+
     var output: String {
         return converter()
     }
     
     func converter() -> String {
-        guard let input: Int = Int(selectedInput) else { return "0" }
+        guard let input: Int = Int(input) else { return "0" }
         
-        var inUnit = selectedUnit(inputUnit)
-        
-        var outUnit = selectedUnit(outputUnit)
+        let inUnit = selectedUnit(units[unit][inputUnit])
+        let outUnit = selectedUnit(units[unit][outputUnit])
         
         let fromValue = Measurement(value: Double(input), unit: inUnit)
         let toValue = fromValue.converted(to: outUnit)
-        
         return "\(toValue)"
     }
-    
-//    var selectedOutput: String {
-//        return "\(lengthInputs[outputUnit])"
-//    }
-    
+
     var body: some View {
         NavigationView {
             Form {
                 Section {
-                    TextField("Input Unit", text: $selectedInput)
+                    TextField("Input Unit", text: $input)
                         .keyboardType(.decimalPad)
                         .multilineTextAlignment(.center)
                     
                     // MARK: - Unit Picker
                     Picker("Length", selection: $unit) {
                         ForEach(0 ..< inputUnitTypes.count) {
-                            Text("\(self.inputUnitTypes[$0])")
+                            Text("\(self.inputUnitTypes[$0].description)")
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
@@ -67,8 +65,8 @@ struct ContentView: View {
                     // MARK: - Input Unit Picker
                     Section(header: Text("From")) {
                         Picker("Length", selection: $inputUnit) {
-                            ForEach(0 ..< lengthInputs.count) {
-                                Text("\(self.lengthInputs[$0])")
+                            ForEach(0 ..< selected.count) {
+                                Text("\(self.selected[$0].description)")
                             }
                         }
                         .pickerStyle(WheelPickerStyle())
@@ -78,8 +76,8 @@ struct ContentView: View {
                     Section(header: Text("To")) {
                         // MARK: - Output Unit Picker
                         Picker("Length", selection: $outputUnit) {
-                            ForEach(0 ..< lengthInputs.count) {
-                                Text("\(self.lengthInputs[$0])")
+                            ForEach(0 ..< selected.count) {
+                                Text("\(self.selected[$0].description)")
                             }
                         }
                         .pickerStyle(WheelPickerStyle())
