@@ -12,7 +12,7 @@ struct ContentView: View {
     
     @State var units: [[UnitType]] = [
         [.meters, .kilometers, .feet, .yards, .miles],
-        [.Celsius, .Fahrenheit, .Kelvin, .Kelvin, .Kelvin],
+        [.Celsius, .Fahrenheit, .Kelvin],
         [.seconds, .minutes, .hours, .miliseconds, .microseconds],
         [.milliliters, .liters, .cups, .pints, .gallons]
     ]
@@ -69,6 +69,7 @@ struct ContentView: View {
                                 Text("\(self.selected[$0].description)")
                             }
                         }
+                        .id(unit)
                         .pickerStyle(WheelPickerStyle())
                         .frame(minWidth: 0, maxWidth: .infinity/2, alignment: .center)
                     }
@@ -80,6 +81,7 @@ struct ContentView: View {
                                 Text("\(self.selected[$0].description)")
                             }
                         }
+                        .id(unit)
                         .pickerStyle(WheelPickerStyle())
                         .frame(minWidth: 0, maxWidth: .infinity/2, alignment: .center)
                     }
