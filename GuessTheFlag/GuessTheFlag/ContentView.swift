@@ -11,12 +11,17 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         ZStack() {
-            Color.red.edgesIgnoringSafeArea(.all)
-            HStack(spacing: 20) {
-                Text("Hello World")
-                Text("Second Text")
-                Text("Turd Text")
+            AngularGradient(gradient: Gradient(colors: [.red, .yellow, .green, .blue, .purple, .red]), center: .center).edgesIgnoringSafeArea(.all)
+            HStack {
+                Group{
+                Image(systemName: "pencil").resizable()
+                Image(systemName: "car").resizable()
+                Image(systemName: "flag").resizable()
+                    
+                }
+                .foregroundColor(Color.white)
             }
+            .frame(width: 300, height: 100, alignment: .center)
         }
     }
 }
