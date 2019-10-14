@@ -1,5 +1,5 @@
 ![Header](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
-![Header](https://img.shields.io/badge/completion-17/100-brightgreen.svg)
+![Header](https://img.shields.io/badge/completion-21/100-brightgreen.svg)
 
 # 100DaysOfSwiftUI
 100 Days Of SwiftUI Challenge by Paul Hudson -> https://www.hackingwithswift.com/100/swiftui
@@ -185,3 +185,19 @@ REVIEW DAY
 * Creating pickers in a form
 * Adding a segmented control for tip percentages
 * Calculating the total per person
+
+ #
+ - [x] <b>Day 18</b>
+* WeSplit Challenges
+
+ #
+ - [x] <b>Day 19</b>
+* Converter app MILESTONE
+
+ #
+ - [x] <b>Day 20</b>
+* Guess the Flag
+
+ #
+ - [x] <b>Day 21</b>
+* Guess the Flag Challenges
