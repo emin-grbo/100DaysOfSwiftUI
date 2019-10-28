@@ -31,7 +31,13 @@ struct ContentView: View {
     @State private var scoreMessage = ""
     @State private var score = 0
     
-    @State private var animateButtons = false
+//    @State private var animateButtons = false
+    
+    @State var opacityAmount = 1.0
+    @State var rotationAmount = 0.0
+    @State var wrongRotationAmount = 0.0
+    
+//    var btns: [FlagImage] = []
     
     var body: some View {
         
@@ -53,13 +59,24 @@ struct ContentView: View {
                 
                 ForEach(0 ..< 3) { number in
                     Button(action: {
+                        self.opacityAmount = 0.5
+
+//                            if number != self.correctAnswer {
+//                                self.rotationAmount = 0
+//                                self.wrongRotationAmount = 90
+//                            }
+//                        }
+//                        self.wrongRotationAmount = Double(90 * number)
                         self.answerTapped(number)
-                        self.animateButtons.toggle()
                     }) {
-//                        Image(self.countries[number])
                         FlagImage(image: self.countries[number])
                     }
+                    .opacity(number == self.correctAnswer ? 1 : self.opacityAmount)
+                    .rotation3DEffect(.degrees(number == self.correctAnswer ? self.rotationAmount : self.wrongRotationAmount),
+                                      axis: (x: 0, y: 1, z: 0))
+                    .animation(.easeInOut)
                 }
+                
                 Text("SCORE: \(score)")
                     .foregroundColor(.white)
                     .font(.headline)
@@ -78,12 +95,26 @@ struct ContentView: View {
             score += 1
             scoreTitle = "CORRECT!"
             scoreMessage = "Your score is: \(score)"
+            rotationAmount = 0.0
             
+            withAnimation(.easeInOut) {
+//                if number == self.correctAnswer {
+                    self.rotationAmount = 360
+//                }
+            }
         } else {
             score -= 1
             scoreTitle = "!WRONG!"
             scoreMessage = "That's the flag of \(countries[number])\nYour score is now: \(score)"
             
+            withAnimation {
+                self.wrongRotationAmount = 90
+            }
+            
+//            if number != self.correctAnswer {
+//                self.rotationAmount = 0
+//
+//            }
         }
         showingScore = true
     }
@@ -91,6 +122,9 @@ struct ContentView: View {
     func askQuestion() {
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
+        opacityAmount = 1.0
+        rotationAmount = 0.0
+        wrongRotationAmount = 0
     }
     
 }
