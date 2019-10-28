@@ -1,5 +1,5 @@
 ![Header](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
-![Header](https://img.shields.io/badge/completion-21/100-brightgreen.svg)
+![Header](https://img.shields.io/badge/completion-34/100-brightgreen.svg)
 
 # 100DaysOfSwiftUI
 100 Days Of SwiftUI Challenge by Paul Hudson -> https://www.hackingwithswift.com/100/swiftui
@@ -188,11 +188,11 @@ REVIEW DAY
 
  #
  - [x] <b>Day 18</b>
-* WeSplit Challenges
+* WeSplit - *Challenges
 
  #
  - [x] <b>Day 19</b>
-* Converter app MILESTONE
+* Converter app **MILESTONE
 
  #
  - [x] <b>Day 20</b>
@@ -200,4 +200,70 @@ REVIEW DAY
 
  #
  - [x] <b>Day 21</b>
-* Guess the Flag Challenges
+* Guess the Flag
+
+ #
+ - [x] <b>Day 22</b>
+* Guess the Flag - *Challenges
+
+ #
+ - [x] <b>Day 23</b>
+* Views and modifiers: Introduction
+* Why does SwiftUI use structs for views?
+* What is behind the main SwiftUI view?
+* Why modifier order matters
+* Why does SwiftUI use “some View” for its view type?
+* Conditional modifiers
+* Environment modifiers
+* Views as properties
+* View composition
+* Custom modifiers
+* Custom containers
+
+ #
+ - [x] <b>Day 24</b>
+* Views and Modifiers
+
+ #
+ - [x] <b>Day 25</b>
+* Rock, Paper, or Scissors **MILESTONE
+
+ #
+ - [x] <b>Day 26</b>
+* BetterRest: coreML project
+
+ #
+ - [x] <b>Day 27</b>
+* BetterRest: coreML project
+
+ #
+ - [x] <b>Day 28</b>
+* BetterRest: coreML project - *Challenges
+
+ #
+ - [x] <b>Day 29</b>
+* Word Scramble
+
+ #
+ - [x] <b>Day 30</b>
+* Word Scramble
+
+ #
+ - [x] <b>Day 31</b>
+* Word Scramble - *Challenges
+
+ #
+ - [x] <b>Day 32</b>
+* Animations
+
+ #
+ - [x] <b>Day 33</b>
+* Animations
+
+ #
+ - [x] <b>Day 34</b>
+* Animations - *Challenges
+
+ #
+ - [x] <b>Day 35</b>
+* //
