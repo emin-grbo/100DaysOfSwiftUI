@@ -55,7 +55,7 @@ struct ContentView: View {
                         .fontWeight(.black)
                 }
                 
-                ForEach(0 ..< 3) { number in
+                ForEach(0 ..< 3, id: \.self) { number in
                     Button(action: {
                         self.opacityAmount = 0.5
                         self.answerTapped(number)
@@ -65,6 +65,8 @@ struct ContentView: View {
                     .opacity(number == self.correctAnswer ? 1 : self.opacityAmount)
                     .rotation3DEffect(.degrees(number == self.correctAnswer ? self.rotationAmount : self.wrongRotationAmount),
                                       axis: (x: 0, y: 1, z: 0))
+                    .rotation3DEffect(.degrees(number != self.correctAnswer ? self.wrongRotationAmount : 0),
+                                      axis: (x: 1, y: 0, z: 0))
                     .animation(.easeInOut)
                 }
                 
