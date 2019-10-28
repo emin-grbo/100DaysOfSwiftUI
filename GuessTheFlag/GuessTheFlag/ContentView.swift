@@ -37,8 +37,6 @@ struct ContentView: View {
     @State var rotationAmount = 0.0
     @State var wrongRotationAmount = 0.0
     
-//    var btns: [FlagImage] = []
-    
     var body: some View {
         
         ZStack {
@@ -60,13 +58,6 @@ struct ContentView: View {
                 ForEach(0 ..< 3) { number in
                     Button(action: {
                         self.opacityAmount = 0.5
-
-//                            if number != self.correctAnswer {
-//                                self.rotationAmount = 0
-//                                self.wrongRotationAmount = 90
-//                            }
-//                        }
-//                        self.wrongRotationAmount = Double(90 * number)
                         self.answerTapped(number)
                     }) {
                         FlagImage(image: self.countries[number])
@@ -98,10 +89,9 @@ struct ContentView: View {
             rotationAmount = 0.0
             
             withAnimation(.easeInOut) {
-//                if number == self.correctAnswer {
-                    self.rotationAmount = 360
-//                }
+                self.rotationAmount = 360
             }
+            
         } else {
             score -= 1
             scoreTitle = "!WRONG!"
@@ -110,11 +100,7 @@ struct ContentView: View {
             withAnimation {
                 self.wrongRotationAmount = 90
             }
-            
-//            if number != self.correctAnswer {
-//                self.rotationAmount = 0
-//
-//            }
+
         }
         showingScore = true
     }
