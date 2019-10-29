@@ -31,11 +31,9 @@ struct ContentView: View {
     @State private var scoreMessage = ""
     @State private var score = 0
     
-//    @State private var animateButtons = false
-    
-    @State var opacityAmount = 1.0
-    @State var rotationAmount = 0.0
-    @State var wrongRotationAmount = 0.0
+    @State private var opacityAmount = 1.0
+    @State private var rotationAmount = 0.0
+    @State private var wrongRotationAmount = [0.0, 0.0, 0.0]
     
     var body: some View {
         
@@ -56,18 +54,18 @@ struct ContentView: View {
                 }
                 
                 ForEach(0 ..< 3, id: \.self) { number in
+                    
                     Button(action: {
-                        self.opacityAmount = 0.5
+                        self.opacityAmount = 0.8
                         self.answerTapped(number)
                     }) {
                         FlagImage(image: self.countries[number])
                     }
                     .opacity(number == self.correctAnswer ? 1 : self.opacityAmount)
-                    .rotation3DEffect(.degrees(number == self.correctAnswer ? self.rotationAmount : self.wrongRotationAmount),
+                    .rotation3DEffect(.degrees(number == self.correctAnswer ? self.rotationAmount : 0),
                                       axis: (x: 0, y: 1, z: 0))
-                    .rotation3DEffect(.degrees(number != self.correctAnswer ? self.wrongRotationAmount : 0),
-                                      axis: (x: 1, y: 0, z: 0))
-                    .animation(.easeInOut)
+                    .rotation3DEffect(.degrees(self.wrongRotationAmount[number]),
+                                      axis: (x: 0, y: 1, z: 0))
                 }
                 
                 Text("SCORE: \(score)")
@@ -90,7 +88,7 @@ struct ContentView: View {
             scoreMessage = "Your score is: \(score)"
             rotationAmount = 0.0
             
-            withAnimation(.easeInOut) {
+            withAnimation(.interpolatingSpring(stiffness: 20, damping: 5)) {
                 self.rotationAmount = 360
             }
             
@@ -99,8 +97,8 @@ struct ContentView: View {
             scoreTitle = "!WRONG!"
             scoreMessage = "That's the flag of \(countries[number])\nYour score is now: \(score)"
             
-            withAnimation {
-                self.wrongRotationAmount = 90
+            withAnimation(Animation.interpolatingSpring(mass: 1, stiffness: 120, damping: 40, initialVelocity: 200)) {
+                self.wrongRotationAmount[number] = 1
             }
 
         }
@@ -110,9 +108,12 @@ struct ContentView: View {
     func askQuestion() {
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
-        opacityAmount = 1.0
-        rotationAmount = 0.0
-        wrongRotationAmount = 0
+        withAnimation(.easeInOut) {
+            self.opacityAmount = 1.0
+        }
+        self.rotationAmount = 0.0
+        wrongRotationAmount = Array(repeating: 0.0, count: 3)
+        
     }
     
 }
