@@ -13,13 +13,14 @@ struct TableButton: View {
     var action: (() -> Void)?
     
     var body: some View {
-        Button(text) {
+//        VStack {
+        Button("x\(text)") {
             self.action?()
         }
         .frame(maxWidth: .infinity, maxHeight: 150)
         .background(Color.white)
-        .foregroundColor(.orange)
-        .font(.system(size: 24, weight: .bold, design: .rounded))
+        .foregroundColor(Color.blue)
+        .font(.system(size: 40, weight: .bold, design: .rounded))
         .cornerRadius(20)
         .shadow(radius: 20)
     }
@@ -28,8 +29,8 @@ struct TableButton: View {
 struct TableButton_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            Color.orange.edgesIgnoringSafeArea(.all)
-    TableButton(text: "Test")
+            Color.blue.edgesIgnoringSafeArea(.all)
+    TableButton(text: "1")
         }
     }
 }
