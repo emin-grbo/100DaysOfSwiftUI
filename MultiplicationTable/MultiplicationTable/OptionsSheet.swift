@@ -32,7 +32,7 @@ struct OptionsSheet: View {
                         self.presentationMode.wrappedValue.dismiss()
                     }
                 }
-                Spacer() 
+                Spacer()
             }
         }
     }

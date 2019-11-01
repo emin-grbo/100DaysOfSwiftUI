@@ -20,7 +20,6 @@ struct ContentView: View {
         case (false, false): return Text("$\(amount)").foregroundColor(.yellow)
         default: return Text("")
         }
-        
     }
     
     var body: some View {
@@ -45,7 +44,7 @@ struct ContentView: View {
             Button(action: {
                 self.showingAddExpense = true
             }) {
-                Image(systemName: "plus")
+                Image(systemName: "eject.fill")
             }
             )
         }
