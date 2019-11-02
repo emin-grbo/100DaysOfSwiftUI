@@ -16,6 +16,7 @@
 		D75463D32367869900B042E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D75463D12367869900B042E9 /* LaunchScreen.storyboard */; };
 		D75463DB236792FC00B042E9 /* TableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75463DA236792FC00B042E9 /* TableButton.swift */; };
 		D75463DD236798A800B042E9 /* GridStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75463DC236798A800B042E9 /* GridStack.swift */; };
+		D798E52E236D885F0011B3CE /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D798E52D236D885F0011B3CE /* TestView.swift */; };
 		D7E08101236A1DAC008844CF /* TableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E08100236A1DAC008844CF /* TableValue.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		D75463D42367869900B042E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D75463DA236792FC00B042E9 /* TableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableButton.swift; sourceTree = "<group>"; };
 		D75463DC236798A800B042E9 /* GridStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridStack.swift; sourceTree = "<group>"; };
+		D798E52D236D885F0011B3CE /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		D7E08100236A1DAC008844CF /* TableValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableValue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,6 +73,7 @@
 				D75463DA236792FC00B042E9 /* TableButton.swift */,
 				D74FAFE62368D81200892E33 /* OptionsSheet.swift */,
 				D75463DC236798A800B042E9 /* GridStack.swift */,
+				D798E52D236D885F0011B3CE /* TestView.swift */,
 				D75463CC2367869900B042E9 /* Assets.xcassets */,
 				D75463D12367869900B042E9 /* LaunchScreen.storyboard */,
 				D75463D42367869900B042E9 /* Info.plist */,
@@ -164,6 +167,7 @@
 				D75463DB236792FC00B042E9 /* TableButton.swift in Sources */,
 				D75463C72367869500B042E9 /* AppDelegate.swift in Sources */,
 				D75463C92367869500B042E9 /* SceneDelegate.swift in Sources */,
+				D798E52E236D885F0011B3CE /* TestView.swift in Sources */,
 				D75463CB2367869500B042E9 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

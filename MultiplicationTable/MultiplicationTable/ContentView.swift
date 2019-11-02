@@ -66,6 +66,12 @@ struct ContentView: View {
                     }
                     .frame(maxWidth: 300)
                     Spacer()
+                    
+                    HStack {
+                        ForEach(0 ..< self.table.numOfQuestions, id: \.self) {
+                            Text("test\($0)")
+                        }
+                    }
                 }
             }
             .navigationBarItems(leading: Text("iMultiply")

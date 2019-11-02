@@ -13,26 +13,46 @@ struct OptionsSheet: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var table : TableValue
     
+    @State private var selection = 0
+    var questionsArray = [5,10,20]
+    
     var body: some View {
 
         ZStack {
             LinearGradient(gradient: Gradient(colors: [.blue, .purple]), startPoint: .top, endPoint: .bottom).edgesIgnoringSafeArea(.all)
             VStack {
-                Spacer()
+                Spacer(minLength: 50)
+                
+                VStack {
+                        Text("Number of Q's?")
+                            .font(.system(size: 24, weight: .bold, design: .rounded))
+                            .foregroundColor(.white)
+                    Picker(selection: $selection, label: Text("Number")) {
+                        ForEach(0 ..< questionsArray.count, id: \.self) {
+                            Text("\(self.questionsArray[$0])")
+                        }
+                    }.pickerStyle(SegmentedPickerStyle())
+                }
+                    .padding()
+                
+                Spacer(minLength: 25)
+                
                 Text("Choose Thy Number!")
-                    .font(.system(size: 40, weight: .bold, design: .rounded))
+                    .font(.system(size: 24, weight: .bold, design: .rounded))
                     .foregroundColor(.white)
-                    .multilineTextAlignment(.center)
                 Spacer()
                 GridStack(rows: 3, columns: 3) { row, col in
                     TableButton(text: "\(row * 3 + col + 1)") {
                         let number: Int = row * 3 + col + 1
                         self.table.value = number
+                        self.table.numOfQuestions = self.questionsArray[self.selection]
                         UserDefaults.standard.set(number, forKey: "tableValue")
+                        UserDefaults.standard.set(self.selection, forKey: "qNum")
                         self.presentationMode.wrappedValue.dismiss()
                     }
                 }
-                Spacer()
+
+                Spacer(minLength: 50)
             }
         }
     }
