@@ -54,7 +54,6 @@ struct ContentView: View {
                             } else {
                                 Text("\(Int.random(in: 1...100))")
                             }
-                            
                         }
                         .font(.system(size: 32, weight: .bold, design: .rounded))
                         .frame(maxWidth: .infinity)
@@ -65,7 +64,7 @@ struct ContentView: View {
                         .shadow(radius: 10)
                     }
                     .frame(maxWidth: 300)
-                    Spacer()
+                    Spacer(minLength: 10)
                     
                     HStack {
                         ForEach(0 ..< self.table.numOfQuestions, id: \.self) {
