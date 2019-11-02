@@ -47,7 +47,7 @@ struct ContentView: View {
                             } else {
                                 print("WRONG")
                             }
-                            
+                            self.nextQuestion()
                         }) {
                             if row == self.randomCol && col == self.randomRow {
                                 Text("\(self.table.value * self.number)")
@@ -67,10 +67,14 @@ struct ContentView: View {
                     Spacer(minLength: 10)
                     
                     HStack {
-                        ForEach(0 ..< self.table.numOfQuestions, id: \.self) {
-                            Text("test\($0)")
+                        ForEach(0 ..< self.table.numOfQuestions, id: \.self) { c in
+                            Circle()
+                                .fill(Color.white)
+                                .frame(width: 10, height: 10)
+                                .opacity(0.5)
                         }
                     }
+                    Spacer()
                 }
             }
             .navigationBarItems(leading: Text("iMultiply")
@@ -92,6 +96,17 @@ struct ContentView: View {
 
 
     
+}
+
+
+extension ContentView {
+    func nextQuestion() {
+        print("Next")
+        number = Int.random(in: 1...10)
+        
+        randomCol = Int.random(in: 0...1)
+        randomRow = Int.random(in: 0...1)
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {

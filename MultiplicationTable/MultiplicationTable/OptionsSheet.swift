@@ -14,7 +14,7 @@ struct OptionsSheet: View {
     @ObservedObject var table : TableValue
     
     @State private var selection = 0
-    var questionsArray = [5,10,20]
+    var questionsArray = [5,10,15]
     
     var body: some View {
 
