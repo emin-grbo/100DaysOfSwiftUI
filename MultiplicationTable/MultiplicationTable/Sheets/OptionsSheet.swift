@@ -14,7 +14,7 @@ struct OptionsSheet: View {
     @ObservedObject var table : TableValue
     
     @State private var selection = 0
-    var questionsArray = [5,10,15]
+    var questionOptionsArray = [5,10,15]
     
     var body: some View {
 
@@ -28,8 +28,8 @@ struct OptionsSheet: View {
                             .font(.system(size: 24, weight: .bold, design: .rounded))
                             .foregroundColor(.white)
                     Picker(selection: $selection, label: Text("Number")) {
-                        ForEach(0 ..< questionsArray.count, id: \.self) {
-                            Text("\(self.questionsArray[$0])")
+                        ForEach(0 ..< questionOptionsArray.count, id: \.self) {
+                            Text("\(self.questionOptionsArray[$0])")
                         }
                     }.pickerStyle(SegmentedPickerStyle())
                 }
@@ -45,9 +45,8 @@ struct OptionsSheet: View {
                     TableButton(text: "\(row * 3 + col + 1)") {
                         let number: Int = row * 3 + col + 1
                         self.table.value = number
-                        self.table.numOfQuestions = self.questionsArray[self.selection]
-                        UserDefaults.standard.set(number, forKey: "tableValue")
-                        UserDefaults.standard.set(self.selection, forKey: "qNum")
+
+                        self.table.numberOfQuestions = self.questionOptionsArray[self.selection]
                         self.presentationMode.wrappedValue.dismiss()
                     }
                 }

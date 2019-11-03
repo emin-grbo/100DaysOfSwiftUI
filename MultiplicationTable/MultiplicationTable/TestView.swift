@@ -10,19 +10,11 @@ import SwiftUI
 
 struct TestView: View {
     
-    @State private var favoriteColor = 0
-    var colors = ["Red", "Green", "Blue"]
+    @State private var text = ""
 
     var body: some View {
-        VStack {
-            Picker(selection: $favoriteColor, label: Text("What is your favorite color?")) {
-                ForEach(0..<colors.count) { index in
-                    Text(self.colors[index]).tag(index)
-                }
-            }.pickerStyle(SegmentedPickerStyle())
-//            .label(Text("test"))
-            Text("Value: \(colors[favoriteColor])")
-        }
+        MyTextField(text: $text, placeholder: "")
+            .frame(width: 200, height: 50)
     }
 }
 
@@ -30,4 +22,34 @@ struct TestView_Previews: PreviewProvider {
     static var previews: some View {
         TestView()
     }
+}
+
+
+struct MyTextField: View {
+   @Binding var text: String
+    var placeholder: String
+    @State var showClearButton = true
+   var body: some View {
+       TextField(placeholder, text: $text, onEditingChanged: { editing in
+           self.showClearButton = editing
+       }, onCommit: {
+           self.showClearButton = false
+       }).modifier(ClearButton(text: $text, visible: $showClearButton))
+   }
+}
+
+struct ClearButton: ViewModifier {
+   @Binding var text: String
+   @Binding var visible: Bool
+   public func body(content: Content) -> some View {
+       HStack {
+           Button(action: {
+               self.text = ""
+           }) {
+               Image(systemName: "multiply.circle.fill")
+                   .foregroundColor(.secondary)
+           }
+           .opacity(visible ? 1 : 0)
+       }
+   }
 }
