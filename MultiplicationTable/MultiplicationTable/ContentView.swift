@@ -105,7 +105,7 @@ struct ContentView: View {
         }
         .alert(isPresented: $showingAlert) {
             return Alert(title: Text("Well done!"),
-                  message: Text("You answered -> \(correctAnswers)\nquestions correctly."),
+                  message: Text("You answered -> \(correctAnswers, specifier: "%.1f")%\nof questions correctly."),
                   
 //                  String(format: "Angle: %.2f", angle)
                 
