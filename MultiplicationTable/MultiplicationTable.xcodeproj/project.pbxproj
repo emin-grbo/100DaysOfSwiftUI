@@ -18,6 +18,7 @@
 		D75463DB236792FC00B042E9 /* TableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75463DA236792FC00B042E9 /* TableButton.swift */; };
 		D75463DD236798A800B042E9 /* GridStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75463DC236798A800B042E9 /* GridStack.swift */; };
 		D798E52E236D885F0011B3CE /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D798E52D236D885F0011B3CE /* TestView.swift */; };
+		D7AC745C2370E1E1001645AB /* HighscoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AC745B2370E1E1001645AB /* HighscoreView.swift */; };
 		D7E08101236A1DAC008844CF /* TableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E08100236A1DAC008844CF /* TableValue.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		D75463DA236792FC00B042E9 /* TableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableButton.swift; sourceTree = "<group>"; };
 		D75463DC236798A800B042E9 /* GridStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridStack.swift; sourceTree = "<group>"; };
 		D798E52D236D885F0011B3CE /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		D7AC745B2370E1E1001645AB /* HighscoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoreView.swift; sourceTree = "<group>"; };
 		D7E08100236A1DAC008844CF /* TableValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableValue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -53,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				D74FAFE62368D81200892E33 /* OptionsSheet.swift */,
+				D7AC745B2370E1E1001645AB /* HighscoreView.swift */,
 			);
 			path = Sheets;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D74FAFE72368D81200892E33 /* OptionsSheet.swift in Sources */,
+				D7AC745C2370E1E1001645AB /* HighscoreView.swift in Sources */,
 				D75463DD236798A800B042E9 /* GridStack.swift in Sources */,
 				D7E08101236A1DAC008844CF /* TableValue.swift in Sources */,
 				D75463DB236792FC00B042E9 /* TableButton.swift in Sources */,

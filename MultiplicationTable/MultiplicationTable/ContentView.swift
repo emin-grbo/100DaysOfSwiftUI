@@ -17,7 +17,6 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject var table = TableValue()
-    @State private var isShowingOptions = false
     @State private var number = Int.random(in: 1...10)
     
     @State private var randomCol = Int.random(in: 0...1)
@@ -26,6 +25,8 @@ struct ContentView: View {
     @State private var currentQuestion = 0
     
     @State private var showingAlert = false
+    @State private var isShowingOptions = false
+    @State private var isShowingHighscore = false
     
     @State private var correctAnswers = 0.0
     @State private var percentage = ""
@@ -62,6 +63,7 @@ struct ContentView: View {
                                     / Double(self.table.questionsArray.count)) * 100
 //                                self.percentage = correctAnswers.rounded()
 //                                self.percentage = String(format: "%.2f", correctAnswers)
+                                
                                 self.showingAlert = true
                             }
                             self.currentQuestion += 1
@@ -97,18 +99,28 @@ struct ContentView: View {
             .navigationBarItems(leading: Text("iMultiply")
                                 .font(.system(size: 20, weight: .bold, design: .rounded))
                                 .foregroundColor(.white),
-                                trailing: Button(action: {
-                self.isShowingOptions = true
-            }) {
-                Image(systemName: "eject.fill").foregroundColor(.white)
-            })
+                                trailing:
+                HStack {
+                    Button(action: {
+                        self.isShowingHighscore = true
+                    }) {
+                        Image(systemName: "chart.bar.fill").foregroundColor(.white)
+                    }
+                    Spacer(minLength: 20)
+                    Button(action: {
+                        self.isShowingOptions = true
+                    }) {
+                        Image(systemName: "eject.fill").foregroundColor(.white)
+                    }
+                }
+            )
+            
+            
         }
         .alert(isPresented: $showingAlert) {
             return Alert(title: Text("Well done!"),
-                  message: Text("You answered -> \(correctAnswers, specifier: "%.1f")%\nof questions correctly."),
-                  
-//                  String(format: "Angle: %.2f", angle)
-                
+                  message: Text("You answered -> \(correctAnswers, specifier: "%.f")%\nof questions correctly."),
+ 
                   dismissButton: .default(Text("Done")) {
                     self.resetGame()
                 })
@@ -118,6 +130,9 @@ struct ContentView: View {
         }
         .onAppear {
             self.isShowingOptions = true
+        }
+        .sheet(isPresented: $isShowingHighscore) {
+            HighscoreView()
         }
     }
 

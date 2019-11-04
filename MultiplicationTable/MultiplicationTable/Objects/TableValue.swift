@@ -22,7 +22,7 @@ class TableValue: ObservableObject {
            didSet {
                UserDefaults.standard.set(self.numberOfQuestions, forKey: "qNum")
             questionsArray = [questionType]()
-            for _ in 0...numberOfQuestions {
+            for _ in 1...numberOfQuestions {
                 
                 questionsArray.append(questionType.unanswered)
             }
@@ -34,13 +34,6 @@ class TableValue: ObservableObject {
             UserDefaults.standard.set(self.value, forKey: "tableValue")
         }
     }
-    
-//    func resetQuestions() {
-//        for question in questionsArray
-//    }
-//
-    
-    
 }
 
 enum questionType {
