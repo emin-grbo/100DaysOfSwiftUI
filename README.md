@@ -1,5 +1,5 @@
 ![Header](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
-![Header](https://img.shields.io/badge/completion-40/100-brightgreen.svg)
+![Header](https://img.shields.io/badge/completion-42/100-brightgreen.svg)
 
 # 100DaysOfSwiftUI
 100 Days Of SwiftUI Challenge by Paul Hudson -> https://www.hackingwithswift.com/100/swiftui
@@ -287,3 +287,11 @@ REVIEW DAY
  #
  - [x] <b>Day 40</b>
 * Moonshot
+
+ #
+ - [x] <b>Day 41</b>
+* Moonshot
+
+ #
+ - [x] <b>Day 42</b>
+* Moonshot - *Challenges
