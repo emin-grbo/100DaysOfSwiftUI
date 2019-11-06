@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D725F0C2237359B3000AC8A2 /* FlowerExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = D725F0C1237359B3000AC8A2 /* FlowerExample.swift */; };
+		D725F0C423735C3C000AC8A2 /* StrokeExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = D725F0C323735C3C000AC8A2 /* StrokeExample.swift */; };
 		D77E8B2B2371D24500E0ED06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77E8B2A2371D24500E0ED06 /* AppDelegate.swift */; };
 		D77E8B2D2371D24500E0ED06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77E8B2C2371D24500E0ED06 /* SceneDelegate.swift */; };
 		D77E8B2F2371D24500E0ED06 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77E8B2E2371D24500E0ED06 /* ContentView.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D725F0C1237359B3000AC8A2 /* FlowerExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerExample.swift; sourceTree = "<group>"; };
+		D725F0C323735C3C000AC8A2 /* StrokeExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeExample.swift; sourceTree = "<group>"; };
 		D77E8B272371D24500E0ED06 /* Drawing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drawing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D77E8B2A2371D24500E0ED06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D77E8B2C2371D24500E0ED06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +69,8 @@
 				D77E8B2A2371D24500E0ED06 /* AppDelegate.swift */,
 				D77E8B2C2371D24500E0ED06 /* SceneDelegate.swift */,
 				D77E8B2E2371D24500E0ED06 /* ContentView.swift */,
+				D725F0C323735C3C000AC8A2 /* StrokeExample.swift */,
+				D725F0C1237359B3000AC8A2 /* FlowerExample.swift */,
 				D77E8B3E2371D42000E0ED06 /* Shapes.swift */,
 				D77E8B402371D4A700E0ED06 /* ArcExample.swift */,
 				D77E8B422371D66600E0ED06 /* StrokeBorder.swift */,
@@ -157,9 +163,11 @@
 			files = (
 				D77E8B2B2371D24500E0ED06 /* AppDelegate.swift in Sources */,
 				D77E8B2D2371D24500E0ED06 /* SceneDelegate.swift in Sources */,
+				D725F0C423735C3C000AC8A2 /* StrokeExample.swift in Sources */,
 				D77E8B412371D4A700E0ED06 /* ArcExample.swift in Sources */,
 				D77E8B432371D66600E0ED06 /* StrokeBorder.swift in Sources */,
 				D77E8B2F2371D24500E0ED06 /* ContentView.swift in Sources */,
+				D725F0C2237359B3000AC8A2 /* FlowerExample.swift in Sources */,
 				D77E8B3F2371D42000E0ED06 /* Shapes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
