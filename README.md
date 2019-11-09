@@ -307,3 +307,7 @@ REVIEW DAY
  #
  - [x] <b>Day 45</b>
 * Drawing day 3
+
+ #
+ - [x] <b>Day 46</b>
+* Drawing day - *Challenges
