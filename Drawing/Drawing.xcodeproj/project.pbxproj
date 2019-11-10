@@ -18,6 +18,11 @@
 		D77E8B3F2371D42000E0ED06 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77E8B3E2371D42000E0ED06 /* Shapes.swift */; };
 		D77E8B412371D4A700E0ED06 /* ArcExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77E8B402371D4A700E0ED06 /* ArcExample.swift */; };
 		D77E8B432371D66600E0ED06 /* StrokeBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77E8B422371D66600E0ED06 /* StrokeBorder.swift */; };
+		D786B6D42374BBEC00A69C29 /* ColorCyclingDrawingGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D786B6D32374BBEC00A69C29 /* ColorCyclingDrawingGroup.swift */; };
+		D786B6D62374BF5400A69C29 /* BlendingModes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D786B6D52374BF5400A69C29 /* BlendingModes.swift */; };
+		D786B6D82374BF7300A69C29 /* TrapezoidExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = D786B6D72374BF7300A69C29 /* TrapezoidExample.swift */; };
+		D786B6DA2374BFDF00A69C29 /* AnimatablePairExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = D786B6D92374BFDF00A69C29 /* AnimatablePairExample.swift */; };
+		D786B6DC2374CCC000A69C29 /* SpirographExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = D786B6DB2374CCC000A69C29 /* SpirographExample.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +39,11 @@
 		D77E8B3E2371D42000E0ED06 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
 		D77E8B402371D4A700E0ED06 /* ArcExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcExample.swift; sourceTree = "<group>"; };
 		D77E8B422371D66600E0ED06 /* StrokeBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeBorder.swift; sourceTree = "<group>"; };
+		D786B6D32374BBEC00A69C29 /* ColorCyclingDrawingGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCyclingDrawingGroup.swift; sourceTree = "<group>"; };
+		D786B6D52374BF5400A69C29 /* BlendingModes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlendingModes.swift; sourceTree = "<group>"; };
+		D786B6D72374BF7300A69C29 /* TrapezoidExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrapezoidExample.swift; sourceTree = "<group>"; };
+		D786B6D92374BFDF00A69C29 /* AnimatablePairExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatablePairExample.swift; sourceTree = "<group>"; };
+		D786B6DB2374CCC000A69C29 /* SpirographExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpirographExample.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +79,11 @@
 				D77E8B2A2371D24500E0ED06 /* AppDelegate.swift */,
 				D77E8B2C2371D24500E0ED06 /* SceneDelegate.swift */,
 				D77E8B2E2371D24500E0ED06 /* ContentView.swift */,
+				D786B6DB2374CCC000A69C29 /* SpirographExample.swift */,
+				D786B6D92374BFDF00A69C29 /* AnimatablePairExample.swift */,
+				D786B6D72374BF7300A69C29 /* TrapezoidExample.swift */,
+				D786B6D32374BBEC00A69C29 /* ColorCyclingDrawingGroup.swift */,
+				D786B6D52374BF5400A69C29 /* BlendingModes.swift */,
 				D725F0C323735C3C000AC8A2 /* StrokeExample.swift */,
 				D725F0C1237359B3000AC8A2 /* FlowerExample.swift */,
 				D77E8B3E2371D42000E0ED06 /* Shapes.swift */,
@@ -163,10 +178,15 @@
 			files = (
 				D77E8B2B2371D24500E0ED06 /* AppDelegate.swift in Sources */,
 				D77E8B2D2371D24500E0ED06 /* SceneDelegate.swift in Sources */,
+				D786B6D42374BBEC00A69C29 /* ColorCyclingDrawingGroup.swift in Sources */,
+				D786B6D62374BF5400A69C29 /* BlendingModes.swift in Sources */,
 				D725F0C423735C3C000AC8A2 /* StrokeExample.swift in Sources */,
 				D77E8B412371D4A700E0ED06 /* ArcExample.swift in Sources */,
+				D786B6D82374BF7300A69C29 /* TrapezoidExample.swift in Sources */,
 				D77E8B432371D66600E0ED06 /* StrokeBorder.swift in Sources */,
 				D77E8B2F2371D24500E0ED06 /* ContentView.swift in Sources */,
+				D786B6DC2374CCC000A69C29 /* SpirographExample.swift in Sources */,
+				D786B6DA2374BFDF00A69C29 /* AnimatablePairExample.swift in Sources */,
 				D725F0C2237359B3000AC8A2 /* FlowerExample.swift in Sources */,
 				D77E8B3F2371D42000E0ED06 /* Shapes.swift in Sources */,
 			);
