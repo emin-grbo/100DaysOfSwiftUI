@@ -10,27 +10,25 @@ import SwiftUI
 
 struct HabitView: View {
     
-    var selectedItem: HabitItem
-    @State var logTimes = 0
+    @ObservedObject var habits: Habbits
+    @State var selectedItem: HabitItem
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .center, spacing: 32) {
             Text(selectedItem.title)
                 .font(.system(size: 50, weight: .bold))
-                .multilineTextAlignment(.leading)
             Text(selectedItem.description)
                 .font(.system(size: 30))
             Text("\(selectedItem.logs)")
                 .font(.system(size: 35))
-            Stepper("Logged", value: $logTimes)
+            Stepper("Logged", onIncrement: {
+                self.selectedItem.logs += 1
+            }, onDecrement: {
+                self.selectedItem.logs -= 1
+            })
+                .labelsHidden()
+            Spacer()
         }
-    .padding()
-        
-    }
-}
-
-struct HabitView_Previews: PreviewProvider {
-    static var previews: some View {
-        HabitView(selectedItem: HabitItem(title: "Test", description: "testSubtitle", logs: 0))
+        .padding()
     }
 }

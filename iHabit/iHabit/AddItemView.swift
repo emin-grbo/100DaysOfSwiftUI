@@ -10,21 +10,25 @@ import SwiftUI
 
 struct AddItemView: View {
     
+    @Environment(\.presentationMode) var presentationMode
+    
+    @ObservedObject var habits: Habbits
+    
     @State var itemTitle: String = ""
+    @State var itemDescription: String = ""
     
     var body: some View {
-        VStack {
-        TextField("Item Title", text: $itemTitle)
-            Spacer(minLength: 32)
-        TextField("Item Subtitle", text: $itemTitle)
-            
+        NavigationView {
+            Form {
+                TextField("Item Title", text: $itemTitle)
+                TextField("Item Description", text: $itemDescription)
+            }
+            .navigationBarTitle("Add New Item")
+            .navigationBarItems(trailing: Button("Save"){
+                let newItem = HabitItem(title: self.itemTitle, description: self.itemDescription, logs: 0)
+                self.habits.items.append(newItem)
+                self.presentationMode.wrappedValue.dismiss()
+            })
         }
-    .padding()
-    }
-}
-
-struct AddItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddItemView()
     }
 }

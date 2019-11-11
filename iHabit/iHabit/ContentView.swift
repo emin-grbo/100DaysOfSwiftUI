@@ -10,17 +10,32 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var habitItems: [HabitItem] = [HabitItem(title: "testTitle", description: "testSubtitle", logs: 1)]
+    @ObservedObject var habits = Habbits()
+    
+    @State private var showingAddItem = false
     
     var body: some View {
         
         NavigationView {
-            List(habitItems, id: \.title) { habitItem in
-                    NavigationLink(destination: HabitView(selectedItem: habitItem)) {
+            List(habits.items) { habitItem in
+                NavigationLink(destination: HabitView(habits: self.habits, selectedItem: habitItem)) {
+                    HStack {
                         Text("\(habitItem.title)")
+                        Text("\(habitItem.logs)")
+                    }
                     }
             }
             .navigationBarTitle("iHabit")
+            .navigationBarItems(trailing:
+            Button(action: {
+                self.showingAddItem = true
+            }) {
+                Text("Add item")
+                    .foregroundColor(.white)
+            })
+        }
+        .sheet(isPresented: $showingAddItem) {
+            AddItemView(habits: self.habits)
         }
         
     }
