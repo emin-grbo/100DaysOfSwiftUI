@@ -18,7 +18,7 @@ struct ContentView: View {
         
         NavigationView {
             List(habits.items) { habitItem in
-                NavigationLink(destination: HabitView(habits: self.habits, selectedItem: habitItem)) {
+                NavigationLink(destination: HabitView(habits: self.habits, selectedItem: self.habits.items.first(where: {$0.id == habitItem.id })! )) {
                     HStack {
                         Text("\(habitItem.title)")
                         Text("\(habitItem.logs)")
