@@ -14,16 +14,24 @@ struct ContentView: View {
     
     @State private var showingAddItem = false
     
+    func delete(at offsets: IndexSet) {
+        habits.items.remove(atOffsets: offsets)
+    }
+    
     var body: some View {
         
         NavigationView {
-            List(habits.items) { habitItem in
-                NavigationLink(destination: HabitView(habits: self.habits, selectedItem: self.habits.items.first(where: {$0.id == habitItem.id })! )) {
-                    HStack {
-                        Text("\(habitItem.title)")
-                        Text("\(habitItem.logs)")
+            List {
+                ForEach(habits.items) { habitItem in
+                    NavigationLink(destination: HabitView(habits: self.habits, selectedItem: habitItem )) {
+                        HStack {
+                            Text("\(habitItem.title)")
+                            Spacer()
+                            Text("\(habitItem.logs)")
+                        }
                     }
-                    }
+                }
+                .onDelete(perform: delete)
             }
             .navigationBarTitle("iHabit")
             .navigationBarItems(trailing:
@@ -39,6 +47,8 @@ struct ContentView: View {
         }
         
     }
+    
+
 }
 
 struct ContentView_Previews: PreviewProvider {

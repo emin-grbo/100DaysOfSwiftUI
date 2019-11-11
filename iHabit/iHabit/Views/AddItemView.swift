@@ -24,10 +24,12 @@ struct AddItemView: View {
                 TextField("Item Description", text: $itemDescription)
             }
             .navigationBarTitle("Add New Item")
-            .navigationBarItems(trailing: Button("Save"){
+            .navigationBarItems(trailing: Button("Save") {
+                if self.itemTitle != "" {
                 let newItem = HabitItem(title: self.itemTitle, description: self.itemDescription, logs: 0)
                 self.habits.items.append(newItem)
                 self.presentationMode.wrappedValue.dismiss()
+                }
             })
         }
     }

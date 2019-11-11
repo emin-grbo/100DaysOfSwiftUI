@@ -43,6 +43,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D78CBCB72379AD56000C3F6F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D7CBF4D4237890CB00AE3474 /* HabitView.swift */,
+				D7CBF4D823789C9400AE3474 /* AddItemView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D78CBCB82379AD5E000C3F6F /*  Models */ = {
+			isa = PBXGroup;
+			children = (
+				D7CBF4D62378966500AE3474 /* HabitItem.swift */,
+			);
+			path = " Models";
+			sourceTree = "<group>";
+		};
 		D7CBF4B423788A4700AE3474 = {
 			isa = PBXGroup;
 			children = (
@@ -65,9 +82,8 @@
 				D7CBF4C023788A4700AE3474 /* AppDelegate.swift */,
 				D7CBF4C223788A4700AE3474 /* SceneDelegate.swift */,
 				D7CBF4C423788A4700AE3474 /* ContentView.swift */,
-				D7CBF4D823789C9400AE3474 /* AddItemView.swift */,
-				D7CBF4D4237890CB00AE3474 /* HabitView.swift */,
-				D7CBF4D62378966500AE3474 /* HabitItem.swift */,
+				D78CBCB72379AD56000C3F6F /* Views */,
+				D78CBCB82379AD5E000C3F6F /*  Models */,
 				D7CBF4C623788A4B00AE3474 /* Assets.xcassets */,
 				D7CBF4CB23788A4B00AE3474 /* LaunchScreen.storyboard */,
 				D7CBF4CE23788A4B00AE3474 /* Info.plist */,
