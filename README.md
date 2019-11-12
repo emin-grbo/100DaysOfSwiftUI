@@ -1,5 +1,5 @@
 ![Header](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
-![Header](https://img.shields.io/badge/completion-45/100-brightgreen.svg)
+![Header](https://img.shields.io/badge/completion-49/100-orange.svg)
 
 # 100DaysOfSwiftUI
 100 Days Of SwiftUI Challenge by Paul Hudson -> https://www.hackingwithswift.com/100/swiftui
@@ -311,3 +311,15 @@ REVIEW DAY
  #
  - [x] <b>Day 46</b>
 * Drawing day - *Challenges
+
+ #
+ - [x] <b>Day 47</b>
+* iHabit -  **MILESTONE
+
+ #
+ - [x] <b>Day 48</b>
+* Video - Expanding your horizons
+
+ #
+ - [x] <b>Day 49</b>
+* CupcakeCorner
