@@ -1,5 +1,5 @@
 ![Header](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
-![Header](https://img.shields.io/badge/completion-50/100-orange.svg)
+![Header](https://img.shields.io/badge/completion-57/100-orange.svg)
 
 # 100DaysOfSwiftUI
 100 Days Of SwiftUI Challenge by Paul Hudson -> https://www.hackingwithswift.com/100/swiftui
@@ -327,3 +327,31 @@ REVIEW DAY
  #
  - [x] <b>Day 50</b>
 * CupcakeCorner
+
+ #
+ - [x] <b>Day 51</b>
+* CupcakeCorner
+
+ #
+ - [x] <b>Day 52</b>
+* CupcakeCorner
+
+ #
+ - [x] <b>Day 53</b>
+* CupcakeCorner - *Challenges
+
+ #
+ - [x] <b>Day 54</b>
+* BookWorm
+
+ #
+ - [x] <b>Day 55</b>
+* BookWorm
+
+ #
+ - [x] <b>Day 56</b>
+* BookWorm - *Challenges
+
+ #
+ - [x] <b>Day 57</b>
+* CoreData
