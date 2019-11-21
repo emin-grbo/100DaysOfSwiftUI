@@ -15,6 +15,11 @@
 		D747BFEE23832C76006E0812 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D747BFED23832C76006E0812 /* Preview Assets.xcassets */; };
 		D747BFF123832C76006E0812 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D747BFEF23832C76006E0812 /* LaunchScreen.storyboard */; };
 		D747BFF923832ED6006E0812 /* PushButtonBindingExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = D747BFF823832ED6006E0812 /* PushButtonBindingExample.swift */; };
+		D7618BDF23848A7E00A8CF50 /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7618BDE23848A7E00A8CF50 /* AddBookView.swift */; };
+		D7618BE123848EAB00A8CF50 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7618BE023848EAB00A8CF50 /* RatingView.swift */; };
+		D7618BE32384914A00A8CF50 /* EmojiRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7618BE22384914A00A8CF50 /* EmojiRatingView.swift */; };
+		D7618BE52384955B00A8CF50 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7618BE42384955B00A8CF50 /* DetailView.swift */; };
+		D7A0369C2387322D005C006E /* Date+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A0369B2387322D005C006E /* Date+Ex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		D747BFF023832C76006E0812 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D747BFF223832C76006E0812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D747BFF823832ED6006E0812 /* PushButtonBindingExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushButtonBindingExample.swift; sourceTree = "<group>"; };
+		D7618BDE23848A7E00A8CF50 /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
+		D7618BE023848EAB00A8CF50 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		D7618BE22384914A00A8CF50 /* EmojiRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiRatingView.swift; sourceTree = "<group>"; };
+		D7618BE42384955B00A8CF50 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		D7A0369B2387322D005C006E /* Date+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +73,11 @@
 				D747BFE123832C72006E0812 /* AppDelegate.swift */,
 				D747BFE323832C72006E0812 /* SceneDelegate.swift */,
 				D747BFE823832C72006E0812 /* ContentView.swift */,
+				D7618BE42384955B00A8CF50 /* DetailView.swift */,
+				D7618BDE23848A7E00A8CF50 /* AddBookView.swift */,
+				D7A0369B2387322D005C006E /* Date+Ex.swift */,
+				D7618BE22384914A00A8CF50 /* EmojiRatingView.swift */,
+				D7618BE023848EAB00A8CF50 /* RatingView.swift */,
 				D747BFF823832ED6006E0812 /* PushButtonBindingExample.swift */,
 				D747BFEA23832C76006E0812 /* Assets.xcassets */,
 				D747BFEF23832C76006E0812 /* LaunchScreen.storyboard */,
@@ -153,10 +168,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D747BFE223832C72006E0812 /* AppDelegate.swift in Sources */,
+				D7618BE52384955B00A8CF50 /* DetailView.swift in Sources */,
+				D7618BDF23848A7E00A8CF50 /* AddBookView.swift in Sources */,
 				D747BFE723832C72006E0812 /* Bookworm.xcdatamodeld in Sources */,
+				D7A0369C2387322D005C006E /* Date+Ex.swift in Sources */,
 				D747BFE923832C72006E0812 /* ContentView.swift in Sources */,
+				D7618BE32384914A00A8CF50 /* EmojiRatingView.swift in Sources */,
 				D747BFF923832ED6006E0812 /* PushButtonBindingExample.swift in Sources */,
 				D747BFE423832C72006E0812 /* SceneDelegate.swift in Sources */,
+				D7618BE123848EAB00A8CF50 /* RatingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
