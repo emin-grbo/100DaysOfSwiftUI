@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D77BD749238C62ED00D0BC3B /* Singer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77BD747238C62ED00D0BC3B /* Singer+CoreDataClass.swift */; };
+		D77BD74A238C62ED00D0BC3B /* Singer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77BD748238C62ED00D0BC3B /* Singer+CoreDataProperties.swift */; };
+		D77BD74C238C63BD00D0BC3B /* FilteredList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77BD74B238C63BD00D0BC3B /* FilteredList.swift */; };
 		D7A036AA238738AF005C006E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A036A9238738AF005C006E /* AppDelegate.swift */; };
 		D7A036AC238738AF005C006E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A036AB238738AF005C006E /* SceneDelegate.swift */; };
 		D7A036AF238738B0005C006E /* CoreDataProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D7A036AD238738B0005C006E /* CoreDataProject.xcdatamodeld */; };
@@ -14,11 +17,12 @@
 		D7A036B3238738B4005C006E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7A036B2238738B4005C006E /* Assets.xcassets */; };
 		D7A036B6238738B4005C006E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7A036B5238738B4005C006E /* Preview Assets.xcassets */; };
 		D7A036B9238738B4005C006E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7A036B7238738B4005C006E /* LaunchScreen.storyboard */; };
-		D7A036C223873A98005C006E /* Movie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A036C023873A98005C006E /* Movie+CoreDataClass.swift */; };
-		D7A036C323873A98005C006E /* Movie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A036C123873A98005C006E /* Movie+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D77BD747238C62ED00D0BC3B /* Singer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Singer+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		D77BD748238C62ED00D0BC3B /* Singer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Singer+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		D77BD74B238C63BD00D0BC3B /* FilteredList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredList.swift; sourceTree = "<group>"; };
 		D7A036A6238738AF005C006E /* CoreDataProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A036A9238738AF005C006E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7A036AB238738AF005C006E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,8 +32,6 @@
 		D7A036B5238738B4005C006E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D7A036B8238738B4005C006E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7A036BA238738B4005C006E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D7A036C023873A98005C006E /* Movie+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataClass.swift"; sourceTree = "<group>"; };
-		D7A036C123873A98005C006E /* Movie+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,11 +64,12 @@
 		D7A036A8238738AF005C006E /* CoreDataProject */ = {
 			isa = PBXGroup;
 			children = (
-				D7A036C023873A98005C006E /* Movie+CoreDataClass.swift */,
-				D7A036C123873A98005C006E /* Movie+CoreDataProperties.swift */,
+				D77BD747238C62ED00D0BC3B /* Singer+CoreDataClass.swift */,
+				D77BD748238C62ED00D0BC3B /* Singer+CoreDataProperties.swift */,
 				D7A036A9238738AF005C006E /* AppDelegate.swift */,
 				D7A036AB238738AF005C006E /* SceneDelegate.swift */,
 				D7A036B0238738B0005C006E /* ContentView.swift */,
+				D77BD74B238C63BD00D0BC3B /* FilteredList.swift */,
 				D7A036B2238738B4005C006E /* Assets.xcassets */,
 				D7A036B7238738B4005C006E /* LaunchScreen.storyboard */,
 				D7A036BA238738B4005C006E /* Info.plist */,
@@ -156,11 +159,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7A036AA238738AF005C006E /* AppDelegate.swift in Sources */,
+				D77BD74A238C62ED00D0BC3B /* Singer+CoreDataProperties.swift in Sources */,
 				D7A036AC238738AF005C006E /* SceneDelegate.swift in Sources */,
+				D77BD749238C62ED00D0BC3B /* Singer+CoreDataClass.swift in Sources */,
 				D7A036B1238738B0005C006E /* ContentView.swift in Sources */,
-				D7A036C223873A98005C006E /* Movie+CoreDataClass.swift in Sources */,
-				D7A036C323873A98005C006E /* Movie+CoreDataProperties.swift in Sources */,
 				D7A036AF238738B0005C006E /* CoreDataProject.xcdatamodeld in Sources */,
+				D77BD74C238C63BD00D0BC3B /* FilteredList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
