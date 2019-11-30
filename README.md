@@ -1,5 +1,5 @@
 ![Header](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
-![Header](https://img.shields.io/badge/completion-59/100-orange.svg)
+![Header](https://img.shields.io/badge/completion-60/100-orange.svg)
 
 # 100DaysOfSwiftUI
 100 Days Of SwiftUI Challenge by Paul Hudson -> https://www.hackingwithswift.com/100/swiftui
@@ -314,7 +314,7 @@ REVIEW DAY
 
  #
  - [x] <b>Day 47</b>
-* iHabit -  **MILESTONE
+* iHabit **MILESTONE
 
  #
  - [x] <b>Day 48</b>
@@ -363,3 +363,7 @@ REVIEW DAY
  #
  - [x] <b>Day 59</b>
 * CoreData - *Challenges
+
+ #
+ - [x] <b>Day 60</b>
+* FriendFace **MILESTONE
