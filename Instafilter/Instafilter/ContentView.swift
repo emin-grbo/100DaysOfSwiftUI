@@ -14,10 +14,13 @@ struct ContentView: View {
     
     @State private var image: Image?
     @State private var filterIntensity = 0.5
+    @State private var filterRadius = 0.5
     @State private var showingImagePicker = false
     @State private var showingFilterSheet = false
     @State private var inputImage: UIImage?
     @State private var processedImage: UIImage?
+    @State private var showError: Bool = false
+    @State private var currentFilterName: String = "Sepia"
     
     @State var currentFilter: CIFilter = CIFilter.sepiaTone()
     let context = CIContext()
@@ -32,6 +35,16 @@ struct ContentView: View {
                 self.filterIntensity = $0
                 self.applyProcessing()
             }
+        )
+        
+        let radius = Binding<Double>(
+            get: {
+                self.filterRadius
+        },
+            set: {
+                self.filterRadius = $0
+                self.applyProcessing()
+        }
         )
         
         return NavigationView {
@@ -54,21 +67,29 @@ struct ContentView: View {
                 .onTapGesture {
                     self.showingImagePicker = true
                 }
+                VStack{
+                    HStack {
+                        Text("Intensity")
+                        Slider(value: intensity)
+                    }.padding(.vertical)
+                    HStack {
+                        Text("Radius")
+                        Slider(value: radius)
+                    }.padding(.vertical)
+                    
+                }
 
                 HStack {
-                    Text("Intensity")
-                    Slider(value: intensity)
-                }.padding(.vertical)
-
-                HStack {
-                    Button("Change Filter") {
+                    Button(currentFilterName) {
                         self.showingFilterSheet = true
                     }
 
                     Spacer()
 
                     Button("Save") {
-                        guard let processedImage = self.processedImage else { return }
+                        guard let processedImage = self.processedImage else {
+                            self.showError.toggle()
+                            return }
                         let imageSaver = ImageSaver()
 
                         imageSaver.successHandler = {
@@ -76,9 +97,9 @@ struct ContentView: View {
                         }
 
                         imageSaver.errorHandler = {
+                            self.showError.toggle()
                             print("Oops: \($0.localizedDescription)")
                         }
-                        
                         imageSaver.writeToPhotoAlbum(image: processedImage)
                     }
                 }
@@ -88,15 +109,32 @@ struct ContentView: View {
             .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
                 ImagePicker(image: self.$inputImage)
             }
+            .alert(isPresented: $showError) {
+                Alert(title: Text("NO"), message: Text("That is not how this works."), dismissButton: .default(Text("Well, ok")))
+            }
             .actionSheet(isPresented: $showingFilterSheet) {
                 ActionSheet(title: Text("Select a filter"), buttons: [
-                    .default(Text("Crystallize")) { self.setFilter(CIFilter.crystallize()) },
-                    .default(Text("Edges")) { self.setFilter(CIFilter.edges()) },
-                    .default(Text("Gaussian Blur")) { self.setFilter(CIFilter.gaussianBlur()) },
-                    .default(Text("Pixellate")) { self.setFilter(CIFilter.pixellate()) },
-                    .default(Text("Sepia Tone")) { self.setFilter(CIFilter.sepiaTone()) },
-                    .default(Text("Unsharp Mask")) { self.setFilter(CIFilter.unsharpMask()) },
-                    .default(Text("Vignette")) { self.setFilter(CIFilter.vignette()) },
+                    .default(Text("Crystallize")) {
+                        self.currentFilterName = "Crystallize"
+                        self.setFilter(CIFilter.crystallize()) },
+                    .default(Text("Edges")) {
+                        self.currentFilterName = "Edges"
+                        self.setFilter(CIFilter.edges()) },
+                    .default(Text("Gaussian Blur")) {
+                        self.currentFilterName = "Gaussian Blur"
+                        self.setFilter(CIFilter.gaussianBlur()) },
+                    .default(Text("Pixellate")) {
+                        self.currentFilterName = "Pixellate"
+                        self.setFilter(CIFilter.pixellate()) },
+                    .default(Text("Sepia Tone")) {
+                        self.currentFilterName = "Sepia Tone"
+                        self.setFilter(CIFilter.sepiaTone()) },
+                    .default(Text("Unsharp Mask")) {
+                        self.currentFilterName = "Unsharp Mask"
+                        self.setFilter(CIFilter.unsharpMask()) },
+                    .default(Text("Vignette")) {
+                        self.currentFilterName = "Vignette"
+                        self.setFilter(CIFilter.vignette()) },
                     .cancel()
                 ])
             }
@@ -117,12 +155,13 @@ extension ContentView {
     
     func applyProcessing() {
         let inputKeys = currentFilter.inputKeys
+        print(inputKeys)
         
         if inputKeys.contains(kCIInputIntensityKey)
         { currentFilter.setValue(filterIntensity, forKey: kCIInputIntensityKey) }
         
         if inputKeys.contains(kCIInputRadiusKey)
-        { currentFilter.setValue(filterIntensity * 200, forKey: kCIInputRadiusKey) }
+        { currentFilter.setValue(filterRadius * 200, forKey: kCIInputRadiusKey) }
         
         if inputKeys.contains(kCIInputScaleKey)
         { currentFilter.setValue(filterIntensity * 10, forKey: kCIInputScaleKey) }
