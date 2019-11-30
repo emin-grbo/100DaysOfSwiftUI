@@ -23,10 +23,10 @@ struct User : Codable, Identifiable {
     let about : String?
     let registered : String?
     let tags : [String]
-    let friends : [Friends]
+    let friends : [Friend]
 }
 
-struct Friends : Codable {
+struct Friend : Codable {
     let id : String?
     let name : String
 }

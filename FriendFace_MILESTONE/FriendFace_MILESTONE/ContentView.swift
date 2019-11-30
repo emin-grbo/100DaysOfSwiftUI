@@ -10,6 +10,9 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @Environment(\.managedObjectContext) var moc
+//    @FetchRequest(entity: UserCD.entity(), sortDescriptors: []) var usersCD: FetchedResults<UserCD>
+    
     @State var users = [User]()
     
     var body: some View {
@@ -27,8 +30,6 @@ struct ContentView: View {
         .navigationBarTitle("FriendFace")
         }.accentColor(.white)
     }
-    
-    
 }
 
 
@@ -36,6 +37,8 @@ struct ContentView: View {
 extension ContentView {
     
     func fetchData() {
+//        print("Users are: \(usersCD)")
+        
         guard let url = URL(string: "https://www.hackingwithswift.com/samples/friendface.json") else {
             print("Invalid URL")
             return

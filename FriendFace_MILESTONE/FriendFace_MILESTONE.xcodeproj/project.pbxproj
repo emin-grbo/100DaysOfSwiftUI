@@ -16,6 +16,7 @@
 		D7B3B99B238DD26200CC2E3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7B3B999238DD26200CC2E3A /* LaunchScreen.storyboard */; };
 		D7F4081223904313007098FA /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F4081123904313007098FA /* UserDetailView.swift */; };
 		D7F40814239064AF007098FA /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F40813239064AF007098FA /* UserInfoView.swift */; };
+		D7F4081723906CD4007098FA /* FriendFaceModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D7F4081523906CD4007098FA /* FriendFaceModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		D7B3B99C238DD26200CC2E3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7F4081123904313007098FA /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		D7F40813239064AF007098FA /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
+		D7F4081623906CD4007098FA /* FriendFaceModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FriendFaceModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				D7B3B994238DD26200CC2E3A /* Assets.xcassets */,
 				D7B3B999238DD26200CC2E3A /* LaunchScreen.storyboard */,
 				D7B3B99C238DD26200CC2E3A /* Info.plist */,
+				D7F4081523906CD4007098FA /* FriendFaceModel.xcdatamodeld */,
 				D7B3B996238DD26200CC2E3A /* Preview Content */,
 			);
 			path = FriendFace_MILESTONE;
@@ -156,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D703458E238F31F900E312BA /* User.swift in Sources */,
+				D7F4081723906CD4007098FA /* FriendFaceModel.xcdatamodeld in Sources */,
 				D7B3B98F238DD25E00CC2E3A /* AppDelegate.swift in Sources */,
 				D7B3B991238DD25E00CC2E3A /* SceneDelegate.swift in Sources */,
 				D7F40814239064AF007098FA /* UserInfoView.swift in Sources */,
@@ -354,6 +358,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D7F4081523906CD4007098FA /* FriendFaceModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D7F4081623906CD4007098FA /* FriendFaceModel.xcdatamodel */,
+			);
+			currentVersion = D7F4081623906CD4007098FA /* FriendFaceModel.xcdatamodel */;
+			path = FriendFaceModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D7B3B983238DD25E00CC2E3A /* Project object */;
 }

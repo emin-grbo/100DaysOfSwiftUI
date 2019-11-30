@@ -12,7 +12,7 @@ struct UserDetailView: View {
     
     var allUsers: [User]
     var currentUser: User
-    var friends: [Friends]
+    var friends: [Friend]
     
     @State private var showingInfo : Bool = false
     @State private var selectedUser: User = nil
@@ -56,13 +56,11 @@ struct UserDetailView: View {
                         Circle()
                             .frame(width: 16, height: 16)
                             .foregroundColor(user.isActive ?? false ? .green : .red)
-//                            NavigationLink(destination: UserInfoView(currentUser: user)){
                         Text(user.name)
                             .onTapGesture {
                                 self.selectedUser = user
                                 self.showingInfo.toggle()
                             }
-//                            }
                         }
                     }
                 }
