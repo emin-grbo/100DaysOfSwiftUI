@@ -1,5 +1,5 @@
 ![Header](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
-![Header](https://img.shields.io/badge/completion-70/100-orange.svg)
+![Header](https://img.shields.io/badge/completion-71/100-orange.svg)
 
 # 100DaysOfSwiftUI
 100 Days Of SwiftUI Challenge by Paul Hudson -> https://www.hackingwithswift.com/100/swiftui
@@ -406,4 +406,8 @@ REVIEW DAY
 
  #
  - [x] <b>Day 70</b>
+* BucketList
+
+ #
+ - [x] <b>Day 71</b>
 * BucketList
