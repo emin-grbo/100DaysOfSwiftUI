@@ -28,7 +28,11 @@ struct UnlockedMapView: View {
                 .fill(Color.blue)
                 .opacity(0.3)
                 .frame(width: 32, height: 32)
-            
+            .alert(isPresented: $showingPlaceDetails) {
+                Alert(title: Text(selectedPlace?.title ?? "Unknown"), message: Text(selectedPlace?.subtitle ?? "Missing place information."), primaryButton: .default(Text("OK")), secondaryButton: .default(Text("Edit")) {
+                    self.showingEditScreen = true
+                })
+            }
             VStack {
                 Spacer()
                 HStack {
@@ -53,11 +57,7 @@ struct UnlockedMapView: View {
                 }
             }
         }
-        .alert(isPresented: $showingPlaceDetails) {
-            Alert(title: Text(selectedPlace?.title ?? "Unknown"), message: Text(selectedPlace?.subtitle ?? "Missing place information."), primaryButton: .default(Text("OK")), secondaryButton: .default(Text("Edit")) {
-                self.showingEditScreen = true
-            })
-        }
+
         .sheet(isPresented: $showingEditScreen, onDismiss: saveData) {
             if self.selectedPlace != nil {
                 EditView(placemark: self.selectedPlace!)
