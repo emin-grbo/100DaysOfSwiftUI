@@ -23,6 +23,7 @@ struct ContentView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 44, height: 44)
+                        .accessibility(hidden: true)
                     
                     VStack(alignment: .leading) {
                         Text(mission.displayName)
@@ -37,6 +38,7 @@ struct ContentView: View {
                 Toggle(isOn: $showNames){
                 Text("Show Names")
                 }
+            .accessibility(label: Text("Show names of astronauts instead of dates."))
             }
             )
         }

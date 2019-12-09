@@ -26,7 +26,10 @@ struct AstronautView: View {
                     Text("Flew on")
                         .font(.callout)
                 ForEach(self.missions) { mission in
+                    HStack {
                     Text("| \(mission.displayName)")
+                    }
+                    .accessibilityElement(children: .combine)
                 }
                 }
                 

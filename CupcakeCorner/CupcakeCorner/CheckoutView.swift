@@ -23,6 +23,7 @@ struct CheckoutView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: geo.size.width)
+                        .accessibility(hidden: true)
 
                     Text("Your total is $\(self.order.orderInfo.cost, specifier: "%.2f")")
                         .font(.title)
