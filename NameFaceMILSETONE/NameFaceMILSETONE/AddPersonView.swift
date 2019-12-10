@@ -18,7 +18,7 @@ struct AddPersonView: View {
     @State private var showingImagePicker = false
     @State private var importedImage: UIImage?
     @State private var image: Image?
-    @State private var currentUserImgID: UUID?
+    @State private var currentUserImgID: String?
     @State var person: Person?
     
     var body: some View {
@@ -43,7 +43,7 @@ struct AddPersonView: View {
                     .frame(width: 120, height: 120, alignment: .center)
                     .clipShape(Capsule())
                 } else if person != nil {
-                    self.loadUserImage(uuid: person!.imgID!)
+                    self.loadUserImage(uuidString: person!.imgID!)
                     .resizable()
                     .scaledToFill()
                     .frame(width: 120, height: 120, alignment: .center)
@@ -59,17 +59,14 @@ struct AddPersonView: View {
                 .padding()
 
             Button("SAVE") {
-                
                 if self.person != nil {
-                    self.importedImage = self.loadUIImage(uuid: self.person!.imgID!)
-                    self.person?.imgID = self.currentUserImgID
                     self.person?.name = self.personName
-                    FileManager().savePhoto(self.importedImage!, withName: self.person!.imgID!.uuidString)
+                    FileManager().savePhoto(self.importedImage!, withName: self.currentUserImgID!)
                 } else {
                     let newPerson = Person(context: self.moc)
-                    newPerson.imgID = UUID()
+                    newPerson.imgID = UUID().uuidString
                     newPerson.name = self.personName
-                    FileManager().savePhoto(self.importedImage!, withName: newPerson.imgID!.uuidString)
+                    FileManager().savePhoto(self.importedImage!, withName: newPerson.imgID!)
                 }
                 try? self.moc.save()
                 self.presentationMode.wrappedValue.dismiss()
@@ -88,8 +85,9 @@ struct AddPersonView: View {
     
     func loadUser() {
         if person != nil {
-            currentUserImgID = person?.imgID ?? UUID()
+            currentUserImgID = person?.imgID ?? ""
             personName = person?.name ?? ""
+            importedImage = self.loadUIImage(uuidString: self.person!.imgID!)
         }
     }
     
@@ -98,12 +96,12 @@ struct AddPersonView: View {
         image = Image(uiImage: inputImage)
     }
     
-    func loadUIImage(uuid: UUID) -> UIImage {
-        return FileManager().loadPhoto(withName: uuid.uuidString)!
+    func loadUIImage(uuidString: String) -> UIImage {
+        return FileManager().loadPhoto(withName: uuidString)!
     }
     
-    func loadUserImage(uuid: UUID) -> Image {
-        if let uiImage = FileManager().loadPhoto(withName: uuid.uuidString){
+    func loadUserImage(uuidString: String) -> Image {
+        if let uiImage = FileManager().loadPhoto(withName: uuidString){
             return Image(uiImage: uiImage)
         } else {
             return Image(systemName: "person.crop.circle.fill")

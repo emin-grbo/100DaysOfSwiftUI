@@ -23,7 +23,7 @@ struct ContentView: View {
                 HStack {
                     Group {
                     if person.imgID != nil {
-                        self.loadUserImage(uuid: person.imgID!)
+                        self.loadUserImage(uuidString: person.imgID!)
                         .resizable()
                         .scaledToFill()
                         .clipShape(Circle())
@@ -54,8 +54,8 @@ struct ContentView: View {
         }
     }
     
-    func loadUserImage(uuid: UUID) -> Image {
-        if let uiImage = FileManager().loadPhoto(withName: uuid.uuidString){
+    func loadUserImage(uuidString: String) -> Image {
+        if let uiImage = FileManager().loadPhoto(withName: uuidString){
             return Image(uiImage: uiImage)
         } else {
             return Image(systemName: "person.crop.circle.fill")
