@@ -61,7 +61,6 @@ struct AddPersonView: View {
             Button("SAVE") {
                 
                 if self.person != nil {
-                    self.importedImage = self.loadUIImage(uuid: self.person!.imgID!)
                     self.person?.imgID = self.currentUserImgID
                     self.person?.name = self.personName
                     FileManager().savePhoto(self.importedImage!, withName: self.person!.imgID!.uuidString)
@@ -88,6 +87,7 @@ struct AddPersonView: View {
     
     func loadUser() {
         if person != nil {
+            self.importedImage = self.loadUIImage(uuid: self.person!.imgID!)
             currentUserImgID = person?.imgID ?? UUID()
             personName = person?.name ?? ""
         }
