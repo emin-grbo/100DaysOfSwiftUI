@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D703458E238F31F900E312BA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D703458D238F31F900E312BA /* User.swift */; };
+		D78E33AC239FBEB2003520CA /* Filemanager+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E33AB239FBEB2003520CA /* Filemanager+Ex.swift */; };
 		D7B3B98F238DD25E00CC2E3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B3B98E238DD25E00CC2E3A /* AppDelegate.swift */; };
 		D7B3B991238DD25E00CC2E3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B3B990238DD25E00CC2E3A /* SceneDelegate.swift */; };
 		D7B3B993238DD25E00CC2E3A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B3B992238DD25E00CC2E3A /* ContentView.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		D703458D238F31F900E312BA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D78E33AB239FBEB2003520CA /* Filemanager+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Filemanager+Ex.swift"; sourceTree = "<group>"; };
 		D7B3B98B238DD25E00CC2E3A /* FriendFace_MILESTONE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendFace_MILESTONE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7B3B98E238DD25E00CC2E3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7B3B990238DD25E00CC2E3A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			children = (
 				D7B3B98E238DD25E00CC2E3A /* AppDelegate.swift */,
 				D7B3B990238DD25E00CC2E3A /* SceneDelegate.swift */,
+				D78E33AB239FBEB2003520CA /* Filemanager+Ex.swift */,
 				D7B3B992238DD25E00CC2E3A /* ContentView.swift */,
 				D7F4081123904313007098FA /* UserDetailView.swift */,
 				D7F40813239064AF007098FA /* UserInfoView.swift */,
@@ -160,6 +163,7 @@
 			files = (
 				D703458E238F31F900E312BA /* User.swift in Sources */,
 				D7F4081723906CD4007098FA /* FriendFaceModel.xcdatamodeld in Sources */,
+				D78E33AC239FBEB2003520CA /* Filemanager+Ex.swift in Sources */,
 				D7B3B98F238DD25E00CC2E3A /* AppDelegate.swift in Sources */,
 				D7B3B991238DD25E00CC2E3A /* SceneDelegate.swift in Sources */,
 				D7F40814239064AF007098FA /* UserInfoView.swift in Sources */,
