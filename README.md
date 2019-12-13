@@ -1,5 +1,5 @@
 ![Header](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
-![Header](https://img.shields.io/badge/completion-72/100-orange.svg)
+![Header](https://img.shields.io/badge/completion-81/100-orange.svg)
 
 # 100DaysOfSwiftUI
 100 Days Of SwiftUI Challenge by Paul Hudson -> https://www.hackingwithswift.com/100/swiftui
@@ -415,3 +415,39 @@ REVIEW DAY
  #
  - [x] <b>Day 72</b>
 * BucketList
+
+ #
+ - [x] <b>Day 73</b>
+* BucketList - *Challenges
+
+ #
+ - [x] <b>Day 74</b>
+* Accessibility
+
+ #
+ - [x] <b>Day 75</b>
+* Accessibility
+
+ #
+ - [x] <b>Day 76</b>
+* Accessibility
+
+ #
+ - [x] <b>Day 77</b>
+* NameFace **MILESTONE
+
+ #
+ - [x] <b>Day 78</b>
+* NameFace **MILESTONE + MAP
+
+ #
+ - [x] <b>Day 79</b>
+* Hot Prospects
+
+ #
+ - [x] <b>Day 80</b>
+* Hot Prospects
+
+ #
+ - [x] <b>Day 81</b>
+* Hot Prospects
