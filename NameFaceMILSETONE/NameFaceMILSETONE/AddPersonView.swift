@@ -8,11 +8,15 @@
 
 import CoreData
 import SwiftUI
+import CoreLocation
+import MapKit
 
 struct AddPersonView: View {
     
     @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
+    
+    @State var currentUserLocation: CLLocationCoordinate2D?
     
     @State private var personName = ""
     @State private var showingImagePicker = false
@@ -79,10 +83,16 @@ struct AddPersonView: View {
             .font(.system(size: 12, weight: .bold))
             .cornerRadius(25)
             Spacer()
+            
+            Group {
+                UserMapView(currentUserLocation: currentUserLocation ?? CLLocationCoordinate2D(latitude: 51.5, longitude: 0.13))
+            }
+            
             }.onAppear(perform: loadUser)
         .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
             ImagePicker(image: self.$importedImage)
         }
+        
     }
     
     func loadUser() {
@@ -90,6 +100,7 @@ struct AddPersonView: View {
             self.importedImage = self.loadUIImage(uuid: self.person!.imgID!)
             currentUserImgID = person?.imgID ?? UUID()
             personName = person?.name ?? ""
+            print(currentUserLocation)
         }
     }
     

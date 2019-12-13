@@ -1,8 +1,8 @@
 //
 //  MapView.swift
-//  BucketList
+//  NameFaceMILSETONE
 //
-//  Created by roblack on 12/1/19.
+//  Created by roblack on 12/12/19.
 //  Copyright © 2019 roblack. All rights reserved.
 //
 
@@ -86,5 +86,3 @@ struct MapView: UIViewRepresentable {
 
     }
 }
-
-

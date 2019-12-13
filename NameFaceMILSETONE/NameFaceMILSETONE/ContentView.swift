@@ -7,8 +7,12 @@
 //
 import CoreData
 import SwiftUI
+import CoreLocation
 
 struct ContentView: View {
+    
+    let locationFetcher = LocationFetcher()
+    @State private var currentLocation: CLLocationCoordinate2D?
     
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(entity: Person.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Person.name, ascending: true)]) var people: FetchedResults<Person>
@@ -38,7 +42,7 @@ struct ContentView: View {
                 }
             }
             }
-        }
+            }.onAppear(perform: getLocation)
         .navigationBarTitle(Text("FriendsFace"))
         .navigationBarItems(trailing: Button(action: {
             self.showAddScreen.toggle()
@@ -49,9 +53,15 @@ struct ContentView: View {
             .accentColor(.white)
             )
             .sheet(isPresented: $showAddScreen) {
-                AddPersonView().environment(\.managedObjectContext, self.moc)
+                AddPersonView(currentUserLocation: self.currentLocation).environment(\.managedObjectContext, self.moc)
             }
         }
+    }
+    
+    func getLocation() {
+        self.locationFetcher.start()
+        self.currentLocation = self.locationFetcher.lastKnownLocation
+        print(currentLocation)
     }
     
     func loadUserImage(uuid: UUID) -> Image {
@@ -62,3 +72,25 @@ struct ContentView: View {
         }
     }
 }
+
+
+
+class LocationFetcher: NSObject, CLLocationManagerDelegate {
+    let manager = CLLocationManager()
+    var lastKnownLocation: CLLocationCoordinate2D?
+
+    override init() {
+        super.init()
+        manager.delegate = self
+    }
+
+    func start() {
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        lastKnownLocation = locations.first?.coordinate
+    }
+}
+
