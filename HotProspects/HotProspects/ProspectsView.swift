@@ -14,11 +14,17 @@ enum FilterType {
     case none, contacted, uncontacted
 }
 
+enum FilterStyle {
+    case name, recency
+}
+
 struct ProspectsView: View {
     
+    @State private var showingSortOptions = false
     @State private var isShowingScanner = false
     @EnvironmentObject var prospects: Prospects
     let filter: FilterType
+    @State private var filterStyle : FilterStyle = .name
     
     var title: String {
         switch filter {
@@ -32,13 +38,17 @@ struct ProspectsView: View {
     }
     
     var filteredProspects: [Prospect] {
+        
+        let filterOrder = filterStyle == .name ? prospects.people.sorted { $0.name < $1.name } : prospects.people.sorted { $0.dateAdded > $1.dateAdded }
+        
+        
         switch filter {
         case .none:
-            return prospects.people
+            return filterOrder
         case .contacted:
-            return prospects.people.filter { $0.isContacted }
+            return filterOrder.filter { $0.isContacted }
         case .uncontacted:
-            return prospects.people.filter { !$0.isContacted }
+            return filterOrder.filter { !$0.isContacted }
         }
     }
     
@@ -46,11 +56,14 @@ struct ProspectsView: View {
         NavigationView {
             List {
                 ForEach(filteredProspects) { prospect in
+                    HStack {
+                        Image(systemName: prospect.isContacted ? "envelope.badge.fill" : "envelope.badge")
                     VStack(alignment: .leading) {
                         Text(prospect.name)
                             .font(.headline)
                         Text(prospect.emailAddress)
                             .foregroundColor(.secondary)
+                    }
                     }
                     .contextMenu {
                         Button(prospect.isContacted ? "Mark Uncontacted" : "Mark Contacted" ) {
@@ -65,7 +78,9 @@ struct ProspectsView: View {
                 }
             }
                 .navigationBarTitle(title)
-                .navigationBarItems(trailing: Button(action: {
+            .navigationBarItems(leading: Button("Sort"){
+                self.showingSortOptions.toggle()
+                }, trailing: Button(action: {
                     self.isShowingScanner = true
                 }) {
                     Image(systemName: "qrcode.viewfinder")
@@ -73,6 +88,13 @@ struct ProspectsView: View {
                 })
             .sheet(isPresented: $isShowingScanner) {
                 CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson\npaul@hackingwithswift.com", completion: self.handleScan)
+            }
+            .actionSheet(isPresented: $showingSortOptions) { () -> ActionSheet in
+                ActionSheet(title: Text("Sort Contacts"), message: Text("Select sorting style"), buttons: [
+                    .default(Text("Sort by name")) { self.filterStyle = .name },
+                    .default(Text("Sort by recency")) { self.filterStyle = .recency },
+                    .cancel()
+                ])
             }
         }
     }
@@ -88,6 +110,7 @@ struct ProspectsView: View {
             let person = Prospect()
             person.name = details[0]
             person.emailAddress = details[1]
+            person.dateAdded = Date()
 
             self.prospects.add(person)
         case .failure(let error):

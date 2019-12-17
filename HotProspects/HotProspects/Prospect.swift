@@ -12,6 +12,7 @@ class Prospect: Identifiable, Codable {
     let id = UUID()
     var name = "Anonymous"
     var emailAddress = ""
+    var dateAdded = Date()
     fileprivate(set) var isContacted = false
 }
 
@@ -21,13 +22,10 @@ class Prospects: ObservableObject {
     static let saveKey = "SavedData"
 
     init() {
-        if let data = UserDefaults.standard.data(forKey: Self.saveKey) {
-            if let decoded = try? JSONDecoder().decode([Prospect].self, from: data) {
-                self.people = decoded
-                return
-            }
+        if let savedPeople = FileManager().load(withName: Self.saveKey) {
+            self.people = savedPeople
+            return
         }
-
         self.people = []
     }
     
@@ -44,8 +42,39 @@ class Prospects: ObservableObject {
     
     private func save() {
         if let encoded = try? JSONEncoder().encode(people) {
-            UserDefaults.standard.set(encoded, forKey: Self.saveKey)
+            FileManager().save(encoded, withName: Self.saveKey)
         }
     }
     
+}
+
+
+extension FileManager {
+    
+    func getDocumentsDirectory() -> URL {
+        // find all possible documents directories for this user
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        // just send back the first one, which ought to be the only one
+        return paths[0]
+    }
+    
+    func save(_ userData: Data, withName name: String) {
+        let url = getDocumentsDirectory().appendingPathComponent(name)
+        
+        do {
+            try userData.write(to: url, options: .atomicWrite)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func load(withName name: String) -> [Prospect]? {
+        let url = getDocumentsDirectory().appendingPathComponent(name)
+        if let data = try? Data(contentsOf: url) {
+            if let decoded = try? JSONDecoder().decode([Prospect].self, from: data) {
+                return decoded
+            }
+        }
+        return nil
+    }
 }
