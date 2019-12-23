@@ -438,7 +438,7 @@ REVIEW DAY
 
  #
  - [x] <b>Day 78</b>
-* NameFace **MILESTONE + MAP
+* NameFace **MILESTONE+MAP
 
  #
  - [x] <b>Day 79</b>
