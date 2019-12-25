@@ -27,6 +27,7 @@
 		D7D05C5423B2987D00C1524B /* ReduceMotionExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D05C5323B2987D00C1524B /* ReduceMotionExample.swift */; };
 		D7D05C5623B29A1600C1524B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D05C5523B29A1600C1524B /* Card.swift */; };
 		D7D05C5823B29BC700C1524B /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D05C5723B29BC700C1524B /* CardView.swift */; };
+		D7DE8D8423B411B50007AF6D /* EditCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DE8D8323B411B50007AF6D /* EditCards.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		D7D05C5323B2987D00C1524B /* ReduceMotionExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReduceMotionExample.swift; sourceTree = "<group>"; };
 		D7D05C5523B29A1600C1524B /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		D7D05C5723B29BC700C1524B /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		D7DE8D8323B411B50007AF6D /* EditCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCards.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				D776D76323AA980200CF616C /* SceneDelegate.swift */,
 				D776D76523AA980200CF616C /* ContentView.swift */,
 				D7D05C5523B29A1600C1524B /* Card.swift */,
+				D7DE8D8323B411B50007AF6D /* EditCards.swift */,
 				D7D05C5723B29BC700C1524B /* CardView.swift */,
 				D776D77723AA9C1800CF616C /* Examples */,
 				D776D76723AA980600CF616C /* Assets.xcassets */,
@@ -205,6 +208,7 @@
 				D776D77B23AA9CAB00CF616C /* RotationExample.swift in Sources */,
 				D776D78523AAA78400CF616C /* HapticsComplexExample.swift in Sources */,
 				D7D05C5423B2987D00C1524B /* ReduceMotionExample.swift in Sources */,
+				D7DE8D8423B411B50007AF6D /* EditCards.swift in Sources */,
 				D776D78123AA9DA300CF616C /* GestureSequenceExample.swift in Sources */,
 				D776D76623AA980200CF616C /* ContentView.swift in Sources */,
 				D776D77F23AA9D4000CF616C /* SimultaniousGestureExample.swift in Sources */,
