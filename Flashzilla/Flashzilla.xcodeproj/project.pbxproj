@@ -113,11 +113,11 @@
 			isa = PBXGroup;
 			children = (
 				D776D78423AAA78400CF616C /* HapticsComplexExample.swift */,
+				D776D78223AA9E7200CF616C /* HapticsExample.swift */,
 				D7D05C4F23B295C700C1524B /* TimerExample.swift */,
 				D7D05C5123B2982500C1524B /* ColorblindExample.swift */,
 				D7D05C5323B2987D00C1524B /* ReduceMotionExample.swift */,
 				D776D78623AAA82500CF616C /* TapGestureShapeExample.swift */,
-				D776D78223AA9E7200CF616C /* HapticsExample.swift */,
 				D776D77523AA9C1300CF616C /* LognPressExample.swift */,
 				D776D78023AA9DA300CF616C /* GestureSequenceExample.swift */,
 				D776D77C23AA9D0B00CF616C /* HighPriorityGestureExample.swift */,

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var usedWords = [String]()
+    @State private var usedWords = ["trounced", "trouncer", "trounces", "troupers", "trouping", "trousers", "troweled", "truanted", "truckers", "trucking", "truckled", "truckles", "trudging", "truelove", "truffles", "trumpery", "trumpets", "trumping", "truncate", "trundled", "trundler", "trundles", "trunking", "trussing"]
     @State private var newWord = ""
     @State private var rootWord = ""
     
@@ -28,14 +28,26 @@ struct ContentView: View {
                     .autocapitalization(.none)
                     .padding()
                 
-                List(usedWords, id: \.self) { word in
-                    HStack {
-                        Image(systemName: "\(word.count).circle")
-                        Text(word)
+                GeometryReader { fullView in
+                    ScrollView(.vertical) {
+                        ForEach(0..<self.usedWords.count - 1) { index in
+                            GeometryReader { geo in
+                                HStack {
+                                Image(systemName: "\(self.usedWords[index].count).circle")
+                                Text("\(self.usedWords[index])")
+                                    .font(.title)
+                                }
+                                .frame(width: fullView.size.width, alignment: Alignment.leading)
+                                .offset(x: (geo.frame(in: .global).midY / (fullView.size.height / 50)),
+                                        y: 0)
+                            }
+                            .frame(height: 40)
+                        }
                     }
-                    .accessibilityElement(children: .ignore)
-                    .accessibility(label: Text("\(word), \(word.count) letters"))
                 }
+                
+                    
+                
                 
                 Text("Score: \(score)")
                     .font(.headline)

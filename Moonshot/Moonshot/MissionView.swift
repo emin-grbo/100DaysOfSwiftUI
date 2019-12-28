@@ -22,11 +22,14 @@ struct MissionView: View {
         GeometryReader { geometry in
             ScrollView(.vertical) {
                 VStack {
+                    GeometryReader { geo in
                     Image(self.mission.image)
                         .resizable()
                         .scaledToFit()
-                        .frame(maxWidth: geometry.size.width * 0.7)
-                        .padding(.top)
+                        .frame(maxWidth: geometry.size.width)
+                        .padding()
+                        .scaleEffect((geo.frame(in: .global).midY) / (geo.frame(in: .global).maxY) * 1.2)
+                    }
                     Text(self.mission.formattedLaunchDate)
                         .font(.headline)
                     Text(self.mission.description)

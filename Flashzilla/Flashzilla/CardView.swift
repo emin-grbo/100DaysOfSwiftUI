@@ -16,7 +16,7 @@ struct CardView: View {
     @Environment(\.accessibilityDifferentiateWithoutColor) var differentiateWithoutColor
     
     let card: Card
-    var removal: (() -> Void)? = nil
+    var removal: ((_ isWrong: Bool) -> Void)? = nil
     @State private var isShowingAnswer = false
     @State private var offset = CGSize.zero
     
@@ -69,11 +69,13 @@ struct CardView: View {
                     .onEnded { _ in
                         if abs(self.offset.width) > 100 {
                             if self.offset.width > 0 {
+                                self.removal?(false)
                                 self.feedback.notificationOccurred(.success)
                             } else {
+                                self.removal?(true)
                                 self.feedback.notificationOccurred(.error)
                             }
-                            self.removal?()
+                            
                         } else {
                             self.offset = .zero
                         }

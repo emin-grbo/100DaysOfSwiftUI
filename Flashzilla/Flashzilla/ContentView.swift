@@ -9,6 +9,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var feedback = UINotificationFeedbackGenerator()
+    @State private var isReadoable = true
+    
     @Environment(\.accessibilityDifferentiateWithoutColor) var differentiateWithoutColor
     @Environment(\.accessibilityEnabled) var accessibilityEnabled
     @State private var showingEditScreen = false
@@ -17,7 +21,7 @@ struct ContentView: View {
     
     @State private var isActive = true
     
-    @State private var timeRemaining = 100
+    @State private var timeRemaining = 5
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
@@ -26,20 +30,33 @@ struct ContentView: View {
             .resizable()
             .scaledToFill()
             .edgesIgnoringSafeArea(.all)
-            VStack {
-                Text("Time: \(timeRemaining)")
-                .font(.largeTitle)
-                .foregroundColor(.white)
-                .padding(.horizontal, 20)
-                .padding(.vertical, 5)
-                .background(
-                    Capsule()
-                        .fill(Color.black)
-                        .opacity(0.75)
-                )
-                
                 VStack {
                     HStack {
+                        HStack {
+                            Text("Redoable?")
+                                .font(.callout)
+                        Toggle(isOn: $isReadoable) {
+                            Text("Persistant False")
+                                .font(.callout)
+                        }.labelsHidden()
+                        }
+                            .padding()
+                        .background(Capsule()
+                        .fill(Color.black)
+                        .opacity(0.75))
+                        
+                        
+                        Spacer()
+                        Text("Time: \(timeRemaining)")
+                        .font(.largeTitle)
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 5)
+                        .background(
+                            Capsule()
+                                .fill(Color.black)
+                                .opacity(0.75)
+                        )
                         Spacer()
 
                         Button(action: {
@@ -57,65 +74,86 @@ struct ContentView: View {
                 .foregroundColor(.white)
                 .font(.largeTitle)
                 .padding()
-                
-                if differentiateWithoutColor || accessibilityEnabled {
-                    VStack {
-                        Spacer()
-
-                        HStack {
-                            Button(action: {
-                                withAnimation {
-                                    self.removeCard(at: self.cards.count - 1)
-                                }
-                            }) {
-                                Image(systemName: "xmark.circle")
-                                    .padding()
-                                    .background(Color.black.opacity(0.7))
-                                    .clipShape(Circle())
-                            }
-                            .accessibility(label: Text("Wrong"))
-                            .accessibility(hint: Text("Mark your answer as being incorrect."))
-                            Spacer()
-
-                            Button(action: {
-                                withAnimation {
-                                    self.removeCard(at: self.cards.count - 1)
-                                }
-                            }) {
-                                Image(systemName: "checkmark.circle")
-                                    .padding()
-                                    .background(Color.black.opacity(0.7))
-                                    .clipShape(Circle())
-                            }
-                            .accessibility(label: Text("Correct"))
-                            .accessibility(hint: Text("Mark your answer as being correct."))
-                        }
-                        .foregroundColor(.white)
-                        .font(.largeTitle)
-                        .padding()
-                    }
-                }
                 ZStack {
+                ZStack {
+                    if differentiateWithoutColor || accessibilityEnabled {
+                        VStack {
+                            Spacer()
+                            HStack {
+                                Button(action: {
+                                    withAnimation {
+                                        self.removeCard(at: self.cards.count - 1)
+                                    }
+                                }) {
+                                    Image(systemName: "xmark.circle")
+                                        .padding()
+                                        .background(Color.black.opacity(0.7))
+                                        .clipShape(Circle())
+                                }
+                                .accessibility(label: Text("Wrong"))
+                                .accessibility(hint: Text("Mark your answer as being incorrect."))
+                                Spacer()
+
+                                Button(action: {
+                                    withAnimation {
+                                        self.removeCard(at: self.cards.count - 1)
+                                    }
+                                }) {
+                                    Image(systemName: "checkmark.circle")
+                                        .padding()
+                                        .background(Color.black.opacity(0.7))
+                                        .clipShape(Circle())
+                                }
+                                .accessibility(label: Text("Correct"))
+                                .accessibility(hint: Text("Mark your answer as being correct."))
+                            }
+                            .foregroundColor(.white)
+                            .font(.largeTitle)
+                            .padding()
+                        }
+                    }
                     ForEach(0..<cards.count, id: \.self) { index in
-                        CardView(card: self.cards[index]) {
+                        CardView(card: self.cards[index]) { (result) in
                            withAnimation {
-                               self.removeCard(at: index)
+                               self.removeCard(at: index, isWrong: result)
                            }
                         }
                         .stacked(at: index, in: self.cards.count)
                         .allowsHitTesting(index == self.cards.count - 1)
                         .accessibility(hidden: index < self.cards.count - 1)
                     }
+                    
                 }
                 .allowsHitTesting(timeRemaining > 0)
-                if cards.isEmpty {
+                if timeRemaining == 0 {
+                    ZStack {
+                    Rectangle()
+                        .background(Color.red)
+                        .opacity(0.8)
+                        VStack {
+                            Spacer()
+                            Text("Sry, time's out.\nYou had \(cards.count) cards left.")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .multilineTextAlignment(.center)
+                            Spacer(minLength: 20)
+                            Button("Start Again", action: resetCards)
+                                .padding()
+                                .background(Color.white)
+                                .foregroundColor(.black)
+                                .clipShape(Capsule())
+                            Spacer()
+                        }
+                    }.edgesIgnoringSafeArea(.all)
+                    .onAppear(perform: endGame)
+                } else if cards.isEmpty && !isActive {
                     Button("Start Again", action: resetCards)
                         .padding()
                         .background(Color.white)
                         .foregroundColor(.black)
                         .clipShape(Capsule())
                 }
-            }
+                }
         }
         .sheet(isPresented: $showingEditScreen, onDismiss: resetCards) {
             EditCards()
@@ -137,17 +175,29 @@ struct ContentView: View {
         }
     }
     
-    func removeCard(at index: Int) {
+    func endGame() {
+        self.feedback.notificationOccurred(.error)
+        self.feedback.notificationOccurred(.warning)
+    }
+    
+    func removeCard(at index: Int, isWrong: Bool? = false) {
         guard index >= 0 else { return }
-        cards.remove(at: index)
+        let currentCard = cards[index]
         
+        if isReadoable && isWrong! {
+            DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
+                self.cards.insert(currentCard, at: 0)
+            }
+        }
+        cards.remove(at: index)
+
         if cards.isEmpty {
             isActive = false
         }
     }
     
     func resetCards() {
-        timeRemaining = 100
+        timeRemaining = 10
         isActive = true
         loadData()
     }
