@@ -1,5 +1,5 @@
 ![Header](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
-![Header](https://img.shields.io/badge/completion-88/100-orange.svg)
+![Header](https://img.shields.io/badge/completion-94/100-orange.svg)
 
 # 100DaysOfSwiftUI
 100 Days Of SwiftUI Challenge by Paul Hudson -> https://www.hackingwithswift.com/100/swiftui
@@ -479,3 +479,29 @@ REVIEW DAY
  #
  - [x] <b>Day 88</b>
 * Flashzilla
+
+ #
+ - [x] <b>Day 89</b>
+* Flashzilla
+
+ #
+ - [x] <b>Day 90</b>
+* Flashzilla
+
+ #
+ - [x] <b>Day 91</b>
+* Flashzilla  - *Challenges
+
+ #
+ - [x] <b>Day 92</b>
+* Layout and geometry
+
+ #
+ - [x] <b>Day 93</b>
+* Layout and geometry
+
+ #
+ - [x] <b>Day 94</b>
+* Layout and geometry - *Challenges
+
+
