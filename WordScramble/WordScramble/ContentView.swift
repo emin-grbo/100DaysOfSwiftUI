@@ -27,7 +27,6 @@ struct ContentView: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .autocapitalization(.none)
                     .padding()
-                
                 GeometryReader { fullView in
                     ScrollView(.vertical) {
                         ForEach(0..<self.usedWords.count - 1) { index in
@@ -38,17 +37,13 @@ struct ContentView: View {
                                     .font(.title)
                                 }
                                 .frame(width: fullView.size.width, alignment: Alignment.leading)
-                                .offset(x: (geo.frame(in: .global).midY / (fullView.size.height / 50)),
+                                .offset(x: (geo.frame(in: .global).minY - (fullView.size.height) > 8 ? geo.frame(in: .global).minY - (fullView.size.height) : 8),
                                         y: 0)
                             }
                             .frame(height: 40)
                         }
                     }
                 }
-                
-                    
-                
-                
                 Text("Score: \(score)")
                     .font(.headline)
                     .frame(maxWidth: .infinity, alignment: .leading)
