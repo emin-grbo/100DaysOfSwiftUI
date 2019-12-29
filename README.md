@@ -1,5 +1,5 @@
 ![Header](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
-![Header](https://img.shields.io/badge/completion-94/100-orange.svg)
+![Header](https://img.shields.io/badge/completion-97/100-orange.svg)
 
 # 100DaysOfSwiftUI
 100 Days Of SwiftUI Challenge by Paul Hudson -> https://www.hackingwithswift.com/100/swiftui
@@ -504,4 +504,26 @@ REVIEW DAY
  - [x] <b>Day 94</b>
 * Layout and geometry - *Challenges
 
+ #
+ - [x] <b>Day 95</b>
+* DICE **MILESTONE
+
+ #
+ - [x] <b>Day 96</b>
+* SnowSeeker
+
+ #
+ - [x] <b>Day 97</b>
+* SnowSeeker
+
+ #
+ - [x] <b>Day 98</b>
+
+
+ #
+ - [x] <b>Day 99</b>
+
+
+ #
+ - [x] <b>Day 100</b>
 
