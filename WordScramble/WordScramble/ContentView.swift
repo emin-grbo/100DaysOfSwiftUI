@@ -33,12 +33,19 @@ struct ContentView: View {
                             GeometryReader { geo in
                                 HStack {
                                 Image(systemName: "\(self.usedWords[index].count).circle")
+                                    .foregroundColor(Color(red: Double(geo.frame(in: .global).minY / fullView.size.height),
+                                    green: 0.5,
+                                    blue: 0.8))
                                 Text("\(self.usedWords[index])")
                                     .font(.title)
+                                    .foregroundColor(Color(red: Double(geo.frame(in: .global).minY / fullView.size.height),
+                                    green: 0.2,
+                                    blue: 0.9))
                                 }
                                 .frame(width: fullView.size.width, alignment: Alignment.leading)
                                 .offset(x: (geo.frame(in: .global).minY - (fullView.size.height) > 8 ? geo.frame(in: .global).minY - (fullView.size.height) : 8),
                                         y: 0)
+                                
                             }
                             .frame(height: 40)
                         }

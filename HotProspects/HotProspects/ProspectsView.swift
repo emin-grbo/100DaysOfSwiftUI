@@ -38,7 +38,6 @@ struct ProspectsView: View {
     }
     
     var filteredProspects: [Prospect] {
-        
         let filterOrder = filterStyle == .name ? prospects.people.sorted { $0.name < $1.name } : prospects.people.sorted { $0.dateAdded > $1.dateAdded }
         
         
