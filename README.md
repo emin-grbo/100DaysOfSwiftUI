@@ -525,5 +525,5 @@ REVIEW DAY
 * SnowSeeker - *Challenges
 
  #
- - [ ] <b>Day 100</b>
+ - [x] <b>Day 100</b>
 FINAL EXAM - Distinction!
