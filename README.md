@@ -1,5 +1,5 @@
 ![Header](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
-![Header](https://img.shields.io/badge/completion-99/100-orange.svg)
+![Header](https://img.shields.io/badge/completion-100/100-green.svg)
 
 # 100DaysOfSwiftUI
 100 Days Of SwiftUI Challenge by Paul Hudson -> https://www.hackingwithswift.com/100/swiftui
@@ -526,4 +526,4 @@ REVIEW DAY
 
  #
  - [ ] <b>Day 100</b>
-FINAL EXAM AWAITS!
+FINAL EXAM - Distinction!
